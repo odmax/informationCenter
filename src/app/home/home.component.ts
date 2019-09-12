@@ -10,29 +10,36 @@ import { Post } from '../Post';
 export class HomeComponent implements OnInit {
 
   @Input()anonymousData={
-     cat_id: 1, message: " "
+     cat_id: " ", message: " "
     
+  }
+  @Input()categoryData={
+    id: " ", name: " "
   }
 
   constructor(private userService:UserService) { }
   objPost:Post;
+  categories:any;
+  cat_id:any;
   ngOnInit() {
 
-    var opost = new Post()
-    {
-      opost.body='testbody';
-      opost.title='testtitle';
-      opost.userId=5;
+    // var opost = new Post()
+    // {
+    //   opost.id_anom=1;
+    //   opost.message='testmessage';
+    //   opost.cat_id=5;
 
-      this.userService.post(opost)
-      .subscribe
-      (
-        data=>
-        {
-          this.objPost = data;
-        }
-      )
-    }
+    //   this.userService.post(opost)
+    //   .subscribe
+    //   (
+    //     data=>
+    //     {
+    //       this.objPost = data;
+    //     }
+    //   )
+    // }
+    return this.userService.getCategory().subscribe(response =>
+      this.categories =response.data);
 
     
   }
@@ -46,5 +53,8 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  
+  getCatId(e){
+    this.cat_id=e;
+    console.log(e.id);
+  }
 }

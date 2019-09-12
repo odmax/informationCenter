@@ -8,16 +8,22 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  anonymousUrl ='http://localhost:1313/anonymous';
+  anonymousUrl ='http://192.168.137.42:1313/anonymous';
+  categoryUrl = 'http://192.168.137.42:1313/category';
 
   constructor(private http:HttpClient) { }
 
   public getAnonymous(user)
   {
-    return this.http.post<any>(this.anonymousUrl,user);
+    return this.http.post<any>(this.anonymousUrl,user, {});
   }
 
-  post(opost:Post): Observable<any>{
-    return this.http.post("https://jsonplaceholder.typicode.com/posts", opost)
+  public getCategory()
+  {
+    return this.http.get<any>(this.categoryUrl);
   }
+
+  // post(opost:Post): Observable<any>{
+  //   return this.http.post("http://localhost:1313/anonymous", opost)
+  // }
 }

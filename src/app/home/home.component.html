@@ -52,22 +52,20 @@
         </div>
         <div class="modal-body">
           
-        
-        <div class="dropdown">
           <div class="form-group">
               <label for="exampleFormControlSelect1">Input Type</label>
-              <select class="form-control">
-                <option>Compliment</option>
-                <option>Complain</option>
-                <option>Suggestion</option>
+              <select [(ngModel)]="categoryData.id" name= "id" id = "category" class="form-control" (change)="getCatId(cat.id)">
+                <option value= " ">-chooses category-</option>
+                <option *ngFor = 'let cat of categories'
+                [value]="cat.id">{{cat.name}}</option>
               </select>
             </div>
-        </div>
-        <div class="form-group" >
+        
+        <div class="form-group">
             <label for="exampleFormControlTextarea1">Enter Input </label>
-            <textarea class="form-control"  rows="3" ></textarea>
+            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message" ></textarea>
            
-          </div>
+        </div>
       <!--  <input placeholder="enter something nhere" [(ngModel)]="name"> -->
   
         </div>
@@ -106,19 +104,20 @@
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
                 
-                <div class="form-group" >
+                <div class="form-group">
                   <label for="exampleFormControlSelect1">Input Type</label>
-                  <select class="form-control" id="exampleFormControlSelect1" >
-                    <option>Compliment</option>
-                    <option>Complain</option>
-                    <option>Suggestion</option>
+                  <select [(ngModel)]="categoryData.id" name= "id" id = "category" class="form-control" (change)="getCatId(cat.id)">
+                    <option value= " ">-chooses category-</option>
+                    <option *ngFor = 'let cat of categories'
+                    [value]="cat.id">{{cat.name}}</option>
                   </select>
                 </div>
-                
-                <div class="form-group" >
-                  <label for="exampleFormControlTextarea1">Enter Input</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+            
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter Input </label>
+                <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message" ></textarea>
+               
+            </div>
               </form>
         </div>
         <div class="modal-footer">
@@ -162,9 +161,9 @@
     </div>
   </div>
    <!--  admin logIn-->
-   <h2>POST DATA RETURNED (https://jsonplaceholder.typicode.com/posts</h2>
+   <!-- <h2>POST DATA RETURNED (https://jsonplaceholder.typicode.com/posts</h2>
    <p>id : {{objPost.id}}</p>
    <p>id : {{objPost.userId}}</p>
    <p>id : {{objPost.title}}</p>
-   <p>id : {{objPost.body}}</p>
+   <p>id : {{objPost.body}}</p> -->
    
