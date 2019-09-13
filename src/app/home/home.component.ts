@@ -16,11 +16,15 @@ export class HomeComponent implements OnInit {
   @Input()categoryData={
     id: " ", name: " "
   }
+  @Input()recogniseData={
+    name: " ", surname: " ", contact: " ", email: " ", message: " "
+   
+ }
 
   constructor(private userService:UserService) { }
   objPost:Post;
   categories:any;
-  cat_id:any;
+  we:any;
   ngOnInit() {
 
    
@@ -40,6 +44,13 @@ export class HomeComponent implements OnInit {
       data =>
       console.log(data)
       );
+  }
+  recogniseReg()
+  {
+    this.userService.PostRecognized(this.recogniseData).subscribe(
+      data =>
+      console.log(data)
+    );
   }
 
 

@@ -98,22 +98,24 @@
                   
   
                   <label for="exampleFormControlInput1">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter name e.g John">
+                  <input [(ngModel)]= "recogniseData.name" type="text" class="form-control" name="name" placeholder="Enter name e.g John">
                   <label for="exampleFormControlInput1">Surname</label>
-                  <input type="text" class="form-control" id="surname" placeholder="Enter surname e.g Doe">
+                  <input [(ngModel)]= "recogniseData.surname" type="text" class="form-control" name="surname" placeholder="Enter surname e.g Doe">
                   <label for="exampleFormControlInput1">Phone Number</label>
-                  <input type="number" class="form-control" id="Cell" placeholder="Contact number eg. 0123456789">
+                  <input [(ngModel)]= "recogniseData.contact" type="number" class="form-control" name="contact" placeholder="Contact number eg. 0123456789">
                   <label for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="Email" placeholder="name@example.com">
+                  <input [(ngModel)]= "recogniseData.email" type="email" class="form-control" name="email" placeholder="name@example.com">
                 </div>
                 
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Input Type</label>
-                  <select [(ngModel)]="categoryData.id" name= "id" id = "category" class="form-control" (change)="getCatId(cat.id)">
-                    <option value= " ">-chooses category-</option>
-                    <option *ngFor = 'let cat of categories'
-                    [value]="cat.id">{{cat.name}}</option>
-                  </select>
+                <div class="dropdown show">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Category
+                </a>
+                
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item"  *ngFor = "let cat of categories" (click)="getCatId(cat)">{{cat.name}}</a>
+                   
+                  </div>
                 </div>
             
             <div class="form-group">
@@ -125,7 +127,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send</button>
+          <button type="button" class="btn btn-primary" (click)="recogniseReg()">Send</button>
         </div>
       </div>
     </div>

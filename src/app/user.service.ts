@@ -10,6 +10,7 @@ export class UserService {
 
   anonymousUrl ='http://168.172.187.65:1313/anonymous';
   categoryUrl = 'http://168.172.187.65:1313/category';
+  recognizedUrl ='http://168.172.187.65:1313/recognized'
 
   constructor(private http:HttpClient) { }
 
@@ -21,6 +22,11 @@ export class UserService {
   public getCategory()
   {
     return this.http.get<any>(this.categoryUrl);
+  }
+
+  public PostRecognized(user)
+  {
+    return this.http.post<any>(this.recognizedUrl, user, {});
   }
 
  
