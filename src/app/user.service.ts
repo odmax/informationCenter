@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  anonymousUrl ='http://192.168.137.42:1313/anonymous';
-  categoryUrl = 'http://192.168.137.42:1313/category';
+  anonymousUrl ='http://168.172.187.65:1313/anonymous';
+  categoryUrl = 'http://168.172.187.65:1313/category';
 
   constructor(private http:HttpClient) { }
 

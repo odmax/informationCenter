@@ -23,21 +23,7 @@ export class HomeComponent implements OnInit {
   cat_id:any;
   ngOnInit() {
 
-    // var opost = new Post()
-    // {
-    //   opost.id_anom=1;
-    //   opost.message='testmessage';
-    //   opost.cat_id=5;
-
-    //   this.userService.post(opost)
-    //   .subscribe
-    //   (
-    //     data=>
-    //     {
-    //       this.objPost = data;
-    //     }
-    //   )
-    // }
+   
     return this.userService.getCategory().subscribe(response =>
       this.categories =response.data);
 
