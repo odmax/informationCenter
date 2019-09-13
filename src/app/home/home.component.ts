@@ -10,7 +10,7 @@ import { Post } from '../Post';
 export class HomeComponent implements OnInit {
 
   @Input()anonymousData={
-     cat_id: " ", message: " "
+     id: " ", message: " "
     
   }
   @Input()categoryData={
@@ -25,22 +25,23 @@ export class HomeComponent implements OnInit {
 
    
     return this.userService.getCategory().subscribe(response =>
-      this.categories =response.data);
+      this.categories =response);
 
-    
+  }
+  getCatId(e){
+    this.categoryData.id= e.id;
+    this.anonymousData.id = this.categoryData.id;
+    console.log(this.anonymousData.id);
+    console.log(this.anonymousData.message);
   }
 
   anonymousReg(){
-    this.userService.getAnonymous(this.anonymousData).subscribe(
-      data =>{console.log(data);
-      },
-      error =>{
-        console.log(error);
-      })
+    this.userService.PostAnonymous(this.anonymousData).subscribe(
+      data =>
+      console.log(data)
+      );
   }
 
-  getCatId(e){
-    this.cat_id=e;
-    console.log(e.id);
-  }
+
 }
+

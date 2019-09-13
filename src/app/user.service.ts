@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  public getAnonymous(user)
+  public PostAnonymous(user)
   {
     return this.http.post<any>(this.anonymousUrl,user, {});
   }
@@ -23,7 +23,5 @@ export class UserService {
     return this.http.get<any>(this.categoryUrl);
   }
 
-  // post(opost:Post): Observable<any>{
-  //   return this.http.post("http://localhost:1313/anonymous", opost)
-  // }
+ 
 }
