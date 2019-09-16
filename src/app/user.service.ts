@@ -10,7 +10,7 @@ export class UserService {
 
   anonymousUrl ='http://168.172.187.65:1313/anonymous';
   categoryUrl = 'http://168.172.187.65:1313/category';
-  recognizedUrl ='http://168.172.187.65:1313/recognized'
+  recognizedUrl ='http://168.172.187.65:1313/recognized';
 
   constructor(private http:HttpClient) { }
 

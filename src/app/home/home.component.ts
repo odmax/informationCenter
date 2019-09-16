@@ -17,14 +17,13 @@ export class HomeComponent implements OnInit {
     id: " ", name: " "
   }
   @Input()recogniseData={
-    name: " ", surname: " ", contact: " ", email: " ", message: " "
+    cat_id:" ",name: " ", surname: " ", contact: " ", email: " ", message: " "
    
  }
 
   constructor(private userService:UserService) { }
-  objPost:Post;
   categories:any;
-  we:any;
+
   ngOnInit() {
 
    
@@ -32,13 +31,23 @@ export class HomeComponent implements OnInit {
       this.categories =response);
 
   }
-  getCatId(e){
+  AnogetCatId(e){
     this.categoryData.id= e.id;
     this.anonymousData.id = this.categoryData.id;
     console.log(this.anonymousData.id);
     console.log(this.anonymousData.message);
   }
 
+  RecgetCatId(e){
+    this.categoryData.id= e.id;
+    this.recogniseData.cat_id = this.categoryData.id;
+    console.log(this.recogniseData.name);
+    console.log(this.recogniseData.surname);
+    console.log(this.recogniseData.contact);
+    console.log(this.recogniseData.email);
+    console.log(this.recogniseData.cat_id);
+    console.log(this.recogniseData.message);
+  }
   anonymousReg(){
     this.userService.PostAnonymous(this.anonymousData).subscribe(
       data =>
