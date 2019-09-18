@@ -63,17 +63,26 @@
             </div>
           </div>
         <form #hero="ngForm">
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Enter Input </label>
-            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message" required></textarea>
            
-        </div>
+            <div *ngIf="test ===true" class="alert alert-warning" role="alert">
+                <p > We would like to hear your <b> {{categoryName}}!</b>
+                 
+                  </p>
+              </div>
+              <br>
+            <div class="form-group">
+              <p *ngIf="test ===true">Please type your {{categoryName}} below</p>
+            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message"
+              placeholder="type your text here"></textarea>
+            </div>
+
+       
       </form>
       <!--  <input placeholder="enter something nhere" [(ngModel)]="name"> -->
   
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
           <button type="button" class="btn btn-primary" href="#popUp" (click)="anonymousReg(); hero.reset()" >Send</button>
         </div>
       </div>
@@ -116,16 +125,24 @@
                    
                   </div>
                 </div>
-            
+
+
+            <div *ngIf="test ===true" class="alert alert-warning" role="alert">
+                <p > We would like to hear your <b> {{categoryName1}}!</b>
+                </p>
+              </div>
+              <br>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Enter Input </label>
-                <textarea [(ngModel)]="recogniseData.message" class="form-control"  rows="3" name="message" ></textarea>
-               
+              <p *ngIf="test ===true">Please type your {{categoryName1}} below</p>
+            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message"
+              placeholder="type your text here"></textarea>
             </div>
+
+
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
           <button type="button" class="btn btn-primary"  (click)="recogniseReg(); heroForm.reset()">Send</button>
         </div>
       </div>
@@ -143,5 +160,12 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="test ===true" class="alert alert-warning" role="alert">
+      <p > Your {{categoryName1}} has been submited! </p>
+  </div>
         
  

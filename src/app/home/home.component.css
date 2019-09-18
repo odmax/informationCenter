@@ -53,21 +53,26 @@
     padding: 20px; 
   }
   
-.button {
-  font-size: 1.5em;
-  padding: 10px;
-  color: #fff;
-  border: 2px solid rgb(2, 68, 129);
-  border-radius: 20px/50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
+/* .button {
+  border-radius: 15%;
+} */
 .button:hover {
   background: #06D85F;
 }
 
-
+#dropdownMenuLink
+{
+  width: 100%;
+  background-color: #e31837;
+}
+.dropdown-item
+{
+  width: 462px;
+  text-align: center;
+}
+.placeholder{
+  color: #e31837;
+}
 
 
 

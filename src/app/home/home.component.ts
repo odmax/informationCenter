@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {UserService} from 'src/app/user.service'
-import { Post } from '../Post';
+
 
 @Component({
   selector: 'app-home',
@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
    
  }
 
+ test=false;
+ categoryName:any;
+ categoryName1:any;
+
   constructor(private userService:UserService) { }
   categories:any;
 
@@ -36,6 +40,9 @@ export class HomeComponent implements OnInit {
     this.anonymousData.id = this.categoryData.id;
     console.log(this.anonymousData.id);
     console.log(this.anonymousData.message);
+    this.categoryName=e.name;
+    this.test=true;
+    console.log(e);
   }
 
   RecgetCatId(e){
@@ -47,6 +54,8 @@ export class HomeComponent implements OnInit {
     console.log(this.recogniseData.email);
     console.log(this.recogniseData.cat_id);
     console.log(this.recogniseData.message);
+    this.categoryName1=e.name;
+    this.test=true;
   }
   anonymousReg(){
     this.userService.PostAnonymous(this.anonymousData).subscribe(

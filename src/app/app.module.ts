@@ -8,7 +8,7 @@ import { UserService } from './user.service';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
@@ -35,7 +35,9 @@ import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule 
+
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
