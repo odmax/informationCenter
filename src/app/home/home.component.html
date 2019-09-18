@@ -83,7 +83,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
-          <button type="button" class="btn btn-primary" href="#popUp" (click)="anonymousReg(); hero.reset()" >Send</button>
+          <button type="button" class="btn btn-primary" (click)="anonymousReg(); hero.reset()" >Send</button>
         </div>
         <div *ngIf="status" class="alert alert-primary" role="alert">
             <p > Your {{categoryName1}} has been submited! </p>
