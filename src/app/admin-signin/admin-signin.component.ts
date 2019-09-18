@@ -13,7 +13,7 @@ export class AdminSigninComponent implements OnInit {
   adminFm: FormGroup;
   
   @Input()adminData={
-   username: " ", password: " "
+   username: " ", password: " ",admin_id: " "
   }
 
 
@@ -22,26 +22,22 @@ export class AdminSigninComponent implements OnInit {
   
 
   ngOnInit() {
-    // return this.userService.getAdminLogIn().subscribe(response =>
-    //   this.adLog =response);
+
   }
 
   getAdminLogIn(f)
   {
-  this.userService.getAdminLogIn(this.adminData).subscribe(
-    data => {
-      this.router.navigate(['/'])
+    this.adminData.admin_id= f.admin_id;
+  
+  console.log("success", this.adminData.admin_id);
+  if(this.adminData.username == f.userName){
+    if(this.adminData.password == f.password){
+      console.log("login successfull");
     }
-  )
-  // console.log("success", this.adminData.admin_id);
-  // if(this.adminData.username == f.userName){
-  //   if(this.adminData.password == f.password){
-  //     console.log("login successfull");
-  //   }
-  // }
-  // else{
-  //   console.log("You do not have Access");
-  // }
+  }
+  else{
+    console.log("You do not have Access");
+  }
   }
 
 }

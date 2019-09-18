@@ -85,6 +85,9 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
           <button type="button" class="btn btn-primary" href="#popUp" (click)="anonymousReg(); hero.reset()" >Send</button>
         </div>
+        <div *ngIf="status" class="alert alert-primary" role="alert">
+            <p > Your {{categoryName1}} has been submited! </p>
+        </div>
       </div>
     </div>
   </div>
@@ -145,6 +148,10 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
           <button type="button" class="btn btn-primary"  (click)="recogniseReg(); heroForm.reset()">Send</button>
         </div>
+
+        <div *ngIf="status" class="alert alert-primary" role="alert">
+            <p > Your {{categoryName1}} has been submited! </p>
+        </div>
       </div>
     </div>
   </div>
@@ -164,8 +171,6 @@
     </div>
   </div>
   
-  <div *ngIf="test ===true" class="alert alert-warning" role="alert">
-      <p > Your {{categoryName1}} has been submited! </p>
-  </div>
+  
         
  

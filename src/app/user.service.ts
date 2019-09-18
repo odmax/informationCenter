@@ -11,7 +11,7 @@ export class UserService {
   anonymousUrl ='http://168.172.187.65:1313/anonymous';
   categoryUrl = 'http://168.172.187.65:1313/category';
   recognizedUrl ='http://168.172.187.65:1313/recognized';
-  AdminLogInUrl = 'http://168.172.187.65:1313/login';
+  AdminLogInUrl = 'http://168.172.187.65:1313/admin';
 
   
 

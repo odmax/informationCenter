@@ -66,13 +66,17 @@ export class HomeComponent implements OnInit {
 
       
   }
+
+  status: number;
   recogniseReg()
   {
     this.userService.PostRecognized(this.recogniseData).subscribe(
       data =>
-      console.log(data)
+    this.status = data.status,
+     
     );
     
+    console.log(this.status);
   }
 
 
