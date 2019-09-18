@@ -12,6 +12,10 @@ export class UserService {
   categoryUrl = 'http://168.172.187.65:1313/category';
   recognizedUrl ='http://168.172.187.65:1313/recognized';
 
+  // anonymousUrl ='http://localhost:1313/anonymous';
+  // categoryUrl = 'http://localhost:1313/category';
+  // recognizedUrl ='http://localhost:1313/recognized';
+
   constructor(private http:HttpClient) { }
 
   public PostAnonymous(user)

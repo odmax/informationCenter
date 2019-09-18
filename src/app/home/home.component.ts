@@ -52,7 +52,10 @@ export class HomeComponent implements OnInit {
     this.userService.PostAnonymous(this.anonymousData).subscribe(
       data =>
       console.log(data)
+      
       );
+
+      
   }
   recogniseReg()
   {
@@ -60,6 +63,7 @@ export class HomeComponent implements OnInit {
       data =>
       console.log(data)
     );
+    
   }
 
 
