@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  anonymousUrl ='http://168.172.187.65:1313/anonymous';
-  categoryUrl = 'http://168.172.187.65:1313/category';
-  recognizedUrl ='http://168.172.187.65:1313/recognized';
-  AdminLogInUrl = 'http://168.172.187.65:1313/admin';
+  anonymousUrl ='http://168.172.185.162/1313/anonymous';
+  categoryUrl = 'http://168.172.185.162/1313/category';
+  recognizedUrl ='http://168.172.185.162/1313/recognized';
+  AdminLogInUrl = 'http://168.172.185.162/1313/admin';
 
   
 
@@ -31,9 +31,9 @@ export class UserService {
   {
     return this.http.post<any>(this.recognizedUrl, user, {});
   }
-  public getAdminLogIn(user)
+  public getAdminLogIn()
   {
-    return this.http.post<any>(this.AdminLogInUrl,user, {});
+    return this.http.get<any>(this.AdminLogInUrl);
   }
 
   
