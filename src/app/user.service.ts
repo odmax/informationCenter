@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  anonymousUrl ='http://168.172.185.162/1313/anonymous';
-  categoryUrl = 'http://168.172.185.162/1313/category';
-  recognizedUrl ='http://168.172.185.162/1313/recognized';
-  AdminLogInUrl = 'http://168.172.185.162/1313/admin';
+  anonymousUrl ='http://localhost:1313/anonymous';
+  categoryUrl = 'http://localhost:1313/category';
+  recognizedUrl ='http://localhost:1313/recognized';
+  AdminLogInUrl = 'http://localhost:1313/admin';
 
   
 
