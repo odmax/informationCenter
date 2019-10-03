@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service'
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router'
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-signin',
