@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {UserService} from 'src/app/user.service'
+import { UserService } from 'src/app/user.service'
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router} from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-admin-signin',
@@ -11,33 +11,34 @@ import { Router} from '@angular/router'
 export class AdminSigninComponent implements OnInit {
 
   adminFm: FormGroup;
-  
-  @Input()adminData={
-   username: " ", password: " ",admin_id: " "
+
+  @Input() adminData = {
+    username: " ", password: " ", admin_id: " "
   }
 
 
-  constructor(private userService:UserService,private router: Router, private adminserv: FormBuilder) { }
-  adLog:any;
-  
+  constructor(private userService: UserService, private router: Router, private adminserv: FormBuilder) { }
+  adLog: any;
+
 
   ngOnInit() {
 
   }
 
-  getAdminLogIn(f)
-  {
-    this.adminData.admin_id= f.admin_id;
-  
-  console.log("success", this.adminData.admin_id);
-  if(this.adminData.username == f.userName){
-    if(this.adminData.password == f.password){
+  AdminLogIn(f) {
+    // this.adminData.admin_id= f.admin_id;
+
+
+
+    // console.log("success", this.adminData.admin_id);
+    if (this.adminData.username == f.userName && this.adminData.password == f.password) {
+      this.userService.getAdminLogIn();
       console.log("login successfull");
+
     }
-  }
-  else{
-    console.log("You do not have Access");
-  }
+    else {
+      console.log("You do not have Access");
+    }
   }
 
 }
