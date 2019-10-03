@@ -30,7 +30,7 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    
+   
       return this.userService.getRecognized().subscribe(response=>
       this.Recognized = response);
        

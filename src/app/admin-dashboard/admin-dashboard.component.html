@@ -56,10 +56,34 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let cat of  Recognized">
-              <td>{{cat.name}}</td> 
-              <td>{{cat.message}}</td>
+            <tr *ngFor="let cat of Recognized; let i = index">
+              <td *ngIf="i<5">{{cat.name}}</td> 
+              <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
+            <td><button class="btn btn-primary" (click)="getRecognized(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+             <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">All Compliments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <tr *ngFor="let cat of  Recognized">
+                  <td>{{cat.name}}</td>
+                  <td>{{cat.message}}</td>
+                </tr>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
           </tbody>
         </table>
 
@@ -77,11 +101,35 @@
               </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let cat of  Recognized">
-              <td>{{cat.name}}</td>
-              <td>{{cat.message}}</td>
+            <tr *ngFor="let cat of  Recognized; let i = index">
+              <td *ngIf="i<5">{{cat.name}}</td>
+              <td *ngIf="i<5">{{cat.message}}</td>
              
             </tr>
+            <td><button class="btn btn-primary" (click)="getRecognized(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+             <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">All Complaints</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <tr *ngFor="let cat of  Recognized">
+                  <td>{{cat.name}}</td>
+                  <td>{{cat.message}}</td>
+                </tr>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
           </tbody>
         </table>
 
@@ -101,11 +149,38 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let cat of  Recognized">
-              <td>{{cat.name}}</td>
-              <td>{{cat.message}}</td>
+            <tr *ngFor="let cat of  Recognized; let i = index">
+              <td *ngIf="i<5">{{cat.name}}</td>
+              <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-      
+            <td>
+              <button class="btn btn-primary" (click)="getRecognized(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
+            </td>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">All Suggestions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <tr *ngFor="let cat of  Recognized">
+                <td>{{cat.name}}</td>
+                <td>{{cat.message}}</td>
+              </tr>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+         
           </tbody>
         </table>
 
