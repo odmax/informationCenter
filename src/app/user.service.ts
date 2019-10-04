@@ -8,12 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  anonymousUrl ='http://192.168.137.1:1313/anonymous';
-  categoryUrl = 'http://192.168.137.1:1313/category';
-  recognizedUrl ='http://192.168.137.1:1313/recognized';
-  AdminLogInUrl = 'http://192.168.137.1:1313/admin';
+  anonymousUrl ='http://168.172.185.162:1313/anonymous';
+  categoryUrl = 'http://168.172.185.162:1313/category';
+  recognizedUrl ='http://168.172.185.162:1313/recognized';
+  AdminLogInUrl = 'http://168.172.185.162:1313/admin';
+  /* 
+  anonymousUrl ='http://168.172.187.65:1313/anonymous';
+  categoryUrl = 'http://168.172.187.65:1313/category';
+  recognizedUrl ='http://168.172.187.65:1313/recognized';
+  AdminLogInUrl = 'http://168.172.187.65:1313/admin';
+  */
 
-  
   constructor(private http:HttpClient) { }
 
   public PostAnonymous(user)
@@ -24,6 +29,10 @@ export class UserService {
   public getCategory()
   {
     return this.http.get<any>(this.categoryUrl);
+  }
+  public getRecognized()
+  {
+    return this.http.get<any>(this.recognizedUrl);
   }
 
   public PostRecognized(user)
