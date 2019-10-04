@@ -6,9 +6,9 @@ import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminComplaintsComponent } from './admin-complaints/admin-complaints.component';
-import { AdminComplimentsComponent } from './admin-compliments/admin-compliments.component';
-import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions.component';
+import {RecognizedComponent} from './recognized/recognized.component';
+import {AnonymousComponent} from './anonymous/anonymous.component';
+
 
 
 
@@ -25,9 +25,9 @@ const routes: Routes = [
   { path: 'admin-header', component: AdminHeaderComponent },
   { path: 'admin-sidenav', component: AdminSidenavComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'admin-complaints', component: AdminComplaintsComponent },
-  { path: 'admin-compliments', component: AdminComplimentsComponent },
-  { path: 'admin-suggestions', component: AdminSuggestionsComponent }
+  { path: 'recognized',component:RecognizedComponent},
+  {path: 'anonymous',component:AnonymousComponent}
+
 ];
 
 @NgModule({
