@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
    
     return this.userService.getCategory().subscribe(response =>
       this.categories =response);
+      
 
   }
   AnogetCatId(e){

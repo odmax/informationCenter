@@ -16,7 +16,7 @@ export class SeeAllComponent implements OnInit {
 
   ngOnInit() {
 
-    return this.userServise.getAnnonymous().subscribe(response => 
+    this.userServise.getAnonymous().subscribe(response => 
       this.annonymous = response);
   }
 

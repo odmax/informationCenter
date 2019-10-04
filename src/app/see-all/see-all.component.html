@@ -3,72 +3,49 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 0 20px;
-}
 
-.container {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.darker {
-  border-color: #ccc;
-  background-color: #ddd;
-}
-
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.container img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.container img.right {
-  float: right;
-  margin-left: 20px;
-  margin-right:0;
-}
-
-.time-right {
-  float: right;
-  color: #aaa;
-}
-
-.time-left {
-  float: left;
-  color: #999;
-}
 </style>
 </head>
 <body>
 
 <h2>Messages</h2>
+<div class="table-responsive">
+  <table class="table">
+  <tr>
+    <th>#</th>
+    <th>Message</th>
+    <th>Response</th>
+  </tr>
 
-<div class="container">
-  <img src="" alt="" style="width:100%;">
-  <p *ngFor= "let mes of annonymous">{{mes.message}}</p>
-  <span class="time-right"></span>
+  <tr *ngFor="let mes of annonymous">
+      <td>{{mes.id}}</td>
+      <td>{{mes.message}}</td>
+      <td>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Respond Here</button>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Type Message</h4>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the modal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+  </tr>
+
+</table>
 </div>
-
-<div class="container darker">
-  <img src="" alt="" class="right" style="width:100%;">
-  <p></p>
-  <span class="time-left">11:01</span>
-</div>
-
 
 </body>
 </html>
