@@ -13,9 +13,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
-import { AdminComplaintsComponent } from './admin-complaints/admin-complaints.component';
-import { AdminComplimentsComponent } from './admin-compliments/admin-compliments.component';
-import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions.component';
+import { RecognizedComponent } from './recognized/recognized.component';
+import { AnonymousComponent } from './anonymous/anonymous.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +26,8 @@ import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions
     AdminSigninComponent,
     AdminHeaderComponent,
     AdminSidenavComponent,
-    AdminComplaintsComponent,
-    AdminComplimentsComponent,
-    AdminSuggestionsComponent
+    RecognizedComponent,
+    AnonymousComponent
   ],
   imports: [
     BrowserModule,

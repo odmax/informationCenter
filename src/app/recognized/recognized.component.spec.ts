@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminSuggestionsComponent } from './admin-suggestions.component';
+import { RecognizedComponent } from './recognized.component';
 
-describe('AdminSuggestionsComponent', () => {
-  let component: AdminSuggestionsComponent;
-  let fixture: ComponentFixture<AdminSuggestionsComponent>;
+describe('RecognizedComponent', () => {
+  let component: RecognizedComponent;
+  let fixture: ComponentFixture<RecognizedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminSuggestionsComponent ]
+      declarations: [ RecognizedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminSuggestionsComponent);
+    fixture = TestBed.createComponent(RecognizedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

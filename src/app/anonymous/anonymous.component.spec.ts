@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminComplimentsComponent } from './admin-compliments.component';
+import { AnonymousComponent } from './anonymous.component';
 
-describe('AdminComplimentsComponent', () => {
-  let component: AdminComplimentsComponent;
-  let fixture: ComponentFixture<AdminComplimentsComponent>;
+describe('AnonymousComponent', () => {
+  let component: AnonymousComponent;
+  let fixture: ComponentFixture<AnonymousComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminComplimentsComponent ]
+      declarations: [ AnonymousComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminComplimentsComponent);
+    fixture = TestBed.createComponent(AnonymousComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
