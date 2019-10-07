@@ -45,24 +45,12 @@ export class AdminDashboardComponent implements OnInit {
     console.log(this.recogniseData.surname);
     console.log(this.recogniseData.contact);
     console.log(this.recogniseData.email);
-    console.log(this.recogniseData.cat_id);
+    console.log(this.recogniseData.cat_id="1");
     console.log(this.recogniseData.message);
     this.categoryName1=e.name;
     this.test=true;
       }
-      /*
      
-
-      takeAnonymousData(e){
-        this.categoryData.id= e.id;
-        this.anonymousData.id = this.categoryData.id;
-        console.log(this.anonymousData.id);
-        console.log(this.anonymousData.message);
-        this.categoryName=e.name;
-        this.test=true;
-        console.log(e);
-      }
-      */
   }
   
 

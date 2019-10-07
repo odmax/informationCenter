@@ -7,16 +7,27 @@ import {HttpClient} from '@angular/common/http'
 })
 export class UserService {
 
-  anonymousUrl ='http://168.172.185.162:1313/anonymous';
-  categoryUrl = 'http://168.172.185.162:1313/category';
-  recognizedUrl ='http://168.172.185.162:1313/recognized/GetAll';
-  complaintsUrl ='http://168.172.185.162:1313/recognized/complaint';
-  complimentsUrl='http://168.172.185.162:1313/recognized/compliment';
-  suggestionUrl=' http://168.172.185.162:1313/recognized/suggestion';
-  anonyComplainUrl ='http://168.172.185.162:1313/anonymous/complaint';
-  anonyComplimentUrl='http://168.172.185.162:1313/anonymous/compliment';
- anonySuggestionUrl ='http://168.172.185.162:1313/anonymous/suggestion';
-  AdminLogInUrl = 'http://168.172.185.162:1313/admin';
+//   anonymousUrl ='http://168.172.185.162:8080/anonymous';
+//   categoryUrl = 'http://168.172.185.162:8080/category';
+//   recognizedUrl ='http://168.172.185.162:8080/recognized/GetAll';
+//   complaintsUrl ='http://168.172.185.162:8080/recognized/complaint';
+//   complimentsUrl='http://168.172.185.162:8080/recognized/compliment';
+//   suggestionUrl=' http://168.172.185.162:8080/recognized/suggestion';
+//   anonyComplainUrl ='http://168.172.185.162:8080/anonymous/complaint';
+//   anonyComplimentUrl='http://168.172.185.162:8080/anonymous/compliment';
+//  anonySuggestionUrl ='http://168.172.185.162:8080/anonymous/suggestion';
+//   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
+
+anonymousUrl ='http://localhost:8080/anonymous';
+  categoryUrl = 'http://localhost:8080/category';
+  recognizedUrl ='http://localhost:8080/recognized/GetAll';
+  complaintsUrl ='http://localhost:8080/recognized/complaint';
+  complimentsUrl='http://localhost:8080/recognized/compliment';
+  suggestionUrl='http://localhost:8080/recognized/suggestion';
+  anonyComplainUrl ='http://localhost:8080/anonymous/complaint';
+  anonyComplimentUrl='http://localhost:8080/anonymous/compliment';
+ anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion';
+  AdminLogInUrl = 'http://localhost:8080/admin';
   
 
 
@@ -80,5 +91,7 @@ public getAnonymSuggestion()
 {
   return this.http.get<any>(this.anonySuggestionUrl);
 }
+
+
 }
 
