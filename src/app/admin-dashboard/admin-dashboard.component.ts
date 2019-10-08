@@ -26,13 +26,21 @@ export class AdminDashboardComponent implements OnInit {
  categoryName:any;
  categoryName1:any;
  Recognized=[];
-
+ complaints=[];
 
   ngOnInit() {
 
    
-      return this.userService.getRecognized().subscribe(response=>
-      this.Recognized = response);
+      return this.userService.getRecognized().subscribe(
+        response=>{
+         this.Recognized = response;
+
+        //  if(response.cat-id == 1)
+        // else if(response.cat-id == 2)
+        // else
+      })
+     
+      
        
        
       }
@@ -50,19 +58,9 @@ export class AdminDashboardComponent implements OnInit {
     this.categoryName1=e.name;
     this.test=true;
       }
-      /*
-     
 
-      takeAnonymousData(e){
-        this.categoryData.id= e.id;
-        this.anonymousData.id = this.categoryData.id;
-        console.log(this.anonymousData.id);
-        console.log(this.anonymousData.message);
-        this.categoryName=e.name;
-        this.test=true;
-        console.log(e);
-      }
-      */
+
+   
   }
   
 

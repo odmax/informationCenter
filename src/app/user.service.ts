@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Post} from '../app/Post';
-import { Observable } from 'rxjs';
+ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  anonymousUrl ='http://168.172.185.162:1313/anonymous';
-  categoryUrl = 'http://168.172.185.162:1313/category';
-  recognizedUrl ='http://168.172.185.162:1313/recognized/GetAll';
-  complaintsUrl ='http://168.172.185.162:1313/recognized/complaint';
-  complimentsUrl='http://168.172.185.162:1313/recognized/compliment';
-  suggestionUrl=' http://168.172.185.162:1313/recognized/suggestion';
-  anonyComplainUrl ='http://168.172.185.162:1313/anonymous/complaint';
-  anonyComplimentUrl='http://168.172.185.162:1313/anonymous/compliment';
- anonySuggestionUrl ='http://168.172.185.162:1313/anonymous/suggestion';
-  AdminLogInUrl = 'http://168.172.185.162:1313/admin';
+  anonymousUrl ='http://192.168.137.1:8080/anonymous';
+  categoryUrl = 'http://192.168.137.1:8080/category';
+  recognizedUrl ='http://192.168.137.1:8080/recognized/GetAll';
+
+  //RECOGNIZED API
+  complaintsUrl ='http://192.168.137.1:8080/recognized/complaint';
+  complimentsUrl='http://192.168.137.1:8080/recognized/compliment';
+  suggestionUrl=' http://192.168.137.1:8080/recognized/suggestion';
+
+  //ANONYMOUS API
+  anonyComplainUrl ='http://192.168.137.1:8080/anonymous/complaint';
+  anonyComplimentUrl='http://192.168.137.1:8080/anonymous/compliment';
+ anonySuggestionUrl ='http://192.168.137.1:8080/anonymous/suggestion';
+  AdminLogInUrl = 'http://192.168.137.1:8080/admin';
   
 
 
