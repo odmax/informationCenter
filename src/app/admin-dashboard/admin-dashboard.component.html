@@ -57,17 +57,17 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let cat of Recognized; let i = index">
+            <tr *ngFor="let cat of compliment; let i = index">
               <td *ngIf="i<5">{{cat.name}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" (click)="takeRecData(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+            <td><button class="btn btn-primary" (click)="takeRekCompliment(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
              <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">All Compliments</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Compliments</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -103,18 +103,18 @@
               </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let cat of  Recognized; let i = index">
+            <tr *ngFor="let cat of  complaints; let i = index">
               <td *ngIf="i<5">{{cat.name}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
              
             </tr>
-            <td><button class="btn btn-primary" (click)="takeRecData(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+            <td><button class="btn btn-primary" (click)="takeRekcomplaints(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
              <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">All Complaints</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Complaints</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -154,12 +154,12 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let cat of  Recognized; let i = index">
+            <tr *ngFor="let cat of  suggestion; let i = index">
               <td *ngIf="i<5">{{cat.name}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
             <td>
-              <button class="btn btn-primary" (click)="takeRecData(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
+              <button class="btn btn-primary" (click)="takeRekSuggestion(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
             </td>
  
   <!-- Modal -->
@@ -167,13 +167,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">All Suggestions</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Suggestions</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <tr *ngFor="let cat of  Recognized">
+            <tr *ngFor="let cat of  suggestion">
                 <td>{{cat.name}}</td>
                 <td>{{cat.message}}</td>
               </tr>

@@ -21,12 +21,12 @@ export class UserService {
 anonymousUrl ='http://localhost:8080/anonymous';
   categoryUrl = 'http://localhost:8080/category';
   recognizedUrl ='http://localhost:8080/recognized/GetAll';
-  complaintsUrl ='http://localhost:8080/recognized/complaint';
-  complimentsUrl='http://localhost:8080/recognized/compliment';
-  suggestionUrl='http://localhost:8080/recognized/suggestion';
-  anonyComplainUrl ='http://localhost:8080/anonymous/complaint';
-  anonyComplimentUrl='http://localhost:8080/anonymous/compliment';
- anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion';
+  complaintsUrl ='http://localhost:8080/recognized/complain/2';
+  complimentsUrl='http://localhost:8080/recognized/compliment/1';
+  suggestionUrl='http://localhost:8080/recognized/suggestion/3';
+  anonyComplainUrl ='http://localhost:8080/anonymous/complain/2';
+  anonyComplimentUrl='http://localhost:8080/anonymous/compliment/1';
+ anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
   AdminLogInUrl = 'http://localhost:8080/admin';
   
 
