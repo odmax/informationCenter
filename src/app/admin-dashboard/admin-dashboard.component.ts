@@ -27,21 +27,16 @@ export class AdminDashboardComponent implements OnInit {
  categoryName1:any;
  Recognized=[];
  complaints=[];
+ compliment=[];
+ suggestion=[];
+
 
   ngOnInit() {
 
-   
-      return this.userService.getRecognized().subscribe(
-        response=>{
-         this.Recognized = response;
-
-        //  if(response.cat-id == 1)
-        // else if(response.cat-id == 2)
-        // else
-      })
-     
-      
-       
+    this.getAllRac();  
+    this.takeRekcomplaints();
+    this.takeRekCompliment();
+    this.takeRekSuggestion();
        
       }
 
@@ -59,8 +54,27 @@ export class AdminDashboardComponent implements OnInit {
     this.test=true;
       }
 
+      getAllRac()
+      {
+        return this.userService.getRecognized().subscribe(response=>
+          this.Recognized = response);
+      }
 
-   
+      takeRekcomplaints()
+      {
+        return this.userService.getRecogComplaint().subscribe(data=>
+        this.complaints = data);
+      }
+      takeRekCompliment()
+      {
+        return this.userService.getRecogCompliment().subscribe(data=>
+          this.compliment = data);
+      }
+     takeRekSuggestion()
+     {
+       return this.userService.getRecogSuggestion().subscribe(data=>
+        this.suggestion = data);
+     }
   }
   
 

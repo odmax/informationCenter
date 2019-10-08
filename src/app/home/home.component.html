@@ -33,6 +33,9 @@
           </h5>
           <button class="button" style="vertical-align:middle" data-toggle="modal" data-target="#exampleModal"><span> Anonymous </span></button>
           <button class="button" style="vertical-align:middle"  data-toggle="modal" data-target="#exampleModalCenter"><span>Recognised </span></button>
+           <!-- Button trigger modal -->
+
+
        </div>
       </div>
   
@@ -137,7 +140,7 @@
               <br>
             <div class="form-group">
               <p *ngIf="test ===true">Please type your {{categoryName1}} below</p>
-            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message"
+            <textarea [(ngModel)]="recogniseData.message" class="form-control"  rows="3" name="message"
               placeholder="type your text here"></textarea>
             </div>
 
@@ -172,5 +175,75 @@
   </div>
   
   
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">follow the screen shoot to assist you on how our system works</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <title>Bootstrap Example</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          
+          <style>
+          /* Make the image fully responsive */
+          .carousel-inner img {
+              width: 1500%;
+              height: 1500%;
+          }
+          </style>
+        </head>
+        <body>
+        
+        <div id="demo" class="carousel slide" data-ride="carousel">
+        
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+           
+          </ul>
+          
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="../../assets/images/home.png" class="d-block w-100" alt="...">
+            <p>you can chose whether you want to be recognised by the system or not by clicking one of the buttons</p>
+            </div>
+            <div class="carousel-item">
+           <img src="../../assets/images/anonymous.png" class="d-block w-100" alt="...">
+           <p> chose the category you want and write the text on the text box</p>
+            </div>
+            
+            <div class="carousel-item">
+        <img src="../../assets/images/recognized.png" class="d-block w-100" alt="...">
+        <p>enter your details and chose the category you want and write the text on the text box </p>
+       
+            </div>
+          </div>
+          
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
         
  

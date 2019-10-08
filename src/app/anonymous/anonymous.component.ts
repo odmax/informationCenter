@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import{UserService} from 'src/app/user.service';
 
 @Component({
@@ -8,21 +8,21 @@ import{UserService} from 'src/app/user.service';
 })
 export class AnonymousComponent implements OnInit {
 
-
-  Recognized:[];
+ 
+  
   constructor(private userService:UserService) { }
-test =false;
-
+  Anonymous:[];
 
   ngOnInit() {
-    return this.userService.getAnonymComplaint().subscribe(response=>
-      this.Recognized = response);
-      return this.userService.getAnonymCompliment().subscribe(response=>
-        this.Recognized = response);
-        return this.userService.getAnonymSuggestion().subscribe(response=>
-          this.Recognized = response);     
+    
+    this.getAllANonyMous();
   }
-
+  getAllANonyMous()
+  {
+    return this.userService.getAnonymous().subscribe(response =>
+     this.Anonymous = response);
+      
+  }
 
 
 }

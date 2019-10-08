@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import {Post} from '../app/Post';
- import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  anonymousUrl ='http://192.168.137.1:8080/anonymous';
-  categoryUrl = 'http://192.168.137.1:8080/category';
-  recognizedUrl ='http://192.168.137.1:8080/recognized/GetAll';
+//   anonymousUrl ='http://168.172.185.162:8080/anonymous';
+//   categoryUrl = 'http://168.172.185.162:8080/category';
+//   recognizedUrl ='http://168.172.185.162:8080/recognized/GetAll';
+//   complaintsUrl ='http://168.172.185.162:8080/recognized/complaint';
+//   complimentsUrl='http://168.172.185.162:8080/recognized/compliment';
+//   suggestionUrl=' http://168.172.185.162:8080/recognized/suggestion';
+//   anonyComplainUrl ='http://168.172.185.162:8080/anonymous/complaint';
+//   anonyComplimentUrl='http://168.172.185.162:8080/anonymous/compliment';
+//  anonySuggestionUrl ='http://168.172.185.162:8080/anonymous/suggestion';
+//   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
 
-  //RECOGNIZED API
-  complaintsUrl ='http://192.168.137.1:8080/recognized/complaint';
-  complimentsUrl='http://192.168.137.1:8080/recognized/compliment';
-  suggestionUrl=' http://192.168.137.1:8080/recognized/suggestion';
-
-  //ANONYMOUS API
-  anonyComplainUrl ='http://192.168.137.1:8080/anonymous/complaint';
-  anonyComplimentUrl='http://192.168.137.1:8080/anonymous/compliment';
- anonySuggestionUrl ='http://192.168.137.1:8080/anonymous/suggestion';
-  AdminLogInUrl = 'http://192.168.137.1:8080/admin';
+  anonymousUrl ='http://localhost:8080/anonymous/GetAll';
+  categoryUrl = 'http://localhost:8080/category';
+  recognizedUrl ='http://localhost:8080/recognized/GetAll';
+  complaintsUrl ='http://localhost:8080/recognized/complain/2';
+  complimentsUrl='http://localhost:8080/recognized/compliment/1';
+  suggestionUrl='http://localhost:8080/recognized/suggestion/3';
+  anonyComplainUrl ='http://localhost:8080/anonymous/complain/2';
+  anonyComplimentUrl='http://localhost:8080/anonymous/compliment/1';
+  anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
+  AdminLogInUrl = 'http://localhost:8080/admin';
+  anonymousPost ='http://localhost:8080/anonymous';
+  recognisePost = 'http://localhost:8080/recognized';
   
 
 
@@ -31,7 +38,7 @@ export class UserService {
 
   public PostAnonymous(user)
   {
-    return this.http.post<any>(this.anonymousUrl,user, {});
+    return this.http.post<any>(this.anonymousPost,user, {});
   }
 
   public getCategory()
@@ -41,8 +48,9 @@ export class UserService {
 
   public PostRecognized(user)
   {
-    return this.http.post<any>(this.recognizedUrl, user, {});
+    return this.http.post<any>(this.recognisePost, user, {});
   }
+  
   public getAdminLogIn()
   {
     return this.http.get<any>(this.AdminLogInUrl);
@@ -85,5 +93,7 @@ public getAnonymSuggestion()
 {
   return this.http.get<any>(this.anonySuggestionUrl);
 }
+
+
 }
 
