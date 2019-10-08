@@ -8,36 +8,21 @@ import{UserService} from 'src/app/user.service';
 })
 export class AnonymousComponent implements OnInit {
 
-  @Input()anonymousData={
-    id: " ", message: " "
-   
- }
-  @Input()categoryData={
-    id: " ", name: " "
-  }
+ 
   
-  Recognized:[];
   constructor(private userService:UserService) { }
-
-test =false;
-categories:any;
-categoryName:any;
-
+  Anonymous:[];
 
   ngOnInit() {
     
-    return this.userService.getCategory().subscribe(response =>
-      this.categories =response);
+    this.getAllANonyMous();
+  }
+  getAllANonyMous()
+  {
+    return this.userService.getAnonymous().subscribe(response =>
+     this.Anonymous = response);
+      
   }
 
-  AnogetCatId(e){
-    this.categoryData.id= e.id;
-    this.anonymousData.id = this.categoryData.id;
-    console.log(this.anonymousData.id);
-    console.log(this.anonymousData.message);
-    this.categoryName=e.name;
-    this.test=true;
-    console.log(e);
-  }
 
 }

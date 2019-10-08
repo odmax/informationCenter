@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
    
     return this.userService.getCategory().subscribe(response =>
-      this.categories =response);
+      this.categories = response);
       
 
   }
@@ -68,16 +68,11 @@ export class HomeComponent implements OnInit {
       
   }
 
-  status: number;
+  
   recogniseReg()
   {
-    this.userService.PostRecognized(this.recogniseData).subscribe(
-      data =>
-    this.status = data.status,
-     
-    );
-    
-    console.log(this.status);
+    this.userService.PostRecognized(this.recogniseData).subscribe(data =>
+    console.log(data));
   }
 
 

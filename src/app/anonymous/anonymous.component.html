@@ -17,31 +17,22 @@
   <table class="table">
     <thead>
       <tr>
-          <th scope="col">ID</th>
-        <th scope="col">Message</th>
+        <th scope="col">ANONYMOUS ID</th>
+        <th scope="col">MESSAGE</th>
+        <th scope="col">CATEGORY ID</th>
+        <th scope="col">DATE</th>
         
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-       
-        <td>Jacob</td>
+      <tr *ngFor="let cat of Anonymous">
+        <td>{{cat.id_anom}}</td>
+        <td>{{cat.message}}</td>
+        <td>{{cat.id}}</td>
+        <td>{{cat.date_time}}</td>
         
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        
-        <td>Mary</td>
-        
       
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-      
-        <td>the Bird</td>
-       
-      </tr>
     </tbody>
   </table>
 </main>

@@ -18,7 +18,7 @@ export class UserService {
 //  anonySuggestionUrl ='http://168.172.185.162:8080/anonymous/suggestion';
 //   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
 
-anonymousUrl ='http://localhost:8080/anonymous';
+  anonymousUrl ='http://localhost:8080/anonymous/GetAll';
   categoryUrl = 'http://localhost:8080/category';
   recognizedUrl ='http://localhost:8080/recognized/GetAll';
   complaintsUrl ='http://localhost:8080/recognized/complain/2';
@@ -26,8 +26,10 @@ anonymousUrl ='http://localhost:8080/anonymous';
   suggestionUrl='http://localhost:8080/recognized/suggestion/3';
   anonyComplainUrl ='http://localhost:8080/anonymous/complain/2';
   anonyComplimentUrl='http://localhost:8080/anonymous/compliment/1';
- anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
+  anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
   AdminLogInUrl = 'http://localhost:8080/admin';
+  anonymousPost ='http://localhost:8080/anonymous';
+  recognisePost = 'http://localhost:8080/recognized';
   
 
 
@@ -37,7 +39,7 @@ anonymousUrl ='http://localhost:8080/anonymous';
 
   public PostAnonymous(user)
   {
-    return this.http.post<any>(this.anonymousUrl,user, {});
+    return this.http.post<any>(this.anonymousPost,user, {});
   }
 
   public getCategory()
@@ -47,7 +49,7 @@ anonymousUrl ='http://localhost:8080/anonymous';
 
   public PostRecognized(user)
   {
-    return this.http.post<any>(this.recognizedUrl, user, {});
+    return this.http.post<any>(this.recognisePost, user, {});
   }
   public getAdminLogIn()
   {

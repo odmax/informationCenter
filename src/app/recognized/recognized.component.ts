@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from 'src/app/user.service';
 
 @Component({
   selector: 'app-recognized',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecognizedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
+
+  Recognized=[];
 
   ngOnInit() {
+    this.getAllRac(); 
   }
+  
+  getAllRac()
+      {
+        return this.userService.getRecognized().subscribe(response=>
+          this.Recognized = response);
+      }
+
 
 }
