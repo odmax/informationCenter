@@ -61,30 +61,8 @@
               <td *ngIf="i<5">{{cat.name}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" (click)="takeRekCompliment(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
-             <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Compliments</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <tr *ngFor="let cat of  Recognized">
-                  <td>{{cat.name}}</td>
-                  <td>{{cat.message}}</td>
-                </tr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+            <td><button class="btn btn-primary" routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" >Show all</button></td>
+           
           </tbody>
         </table>
 
@@ -106,37 +84,17 @@
             <tr *ngFor="let cat of  complaints; let i = index">
               <td *ngIf="i<5">{{cat.name}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
-             
-            </tr>
-            <td><button class="btn btn-primary" (click)="takeRekcomplaints(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
-             <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Complaints</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <tr *ngFor="let cat of  Recognized">
-                  <td>{{cat.name}}</td>
-                  <td>{{cat.message}}</td>
-                </tr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             
-          </div>
-        </div>
-      </div>
-    </div>
+            </tr>
+            <td>
+              <button class="btn btn-primary"  routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)">Show all</button></td>
+    
           </tbody>
         </table>
 
       </div>
     </div>
+
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <h6 class="my-0 font-weight-normal">Recent Suggestions</h6>
@@ -148,8 +106,6 @@
             <tr>
               <th scope="row">Name</th>
               <th scope="row">Message</th>
-
-            
             </tr>
           </thead>
 
@@ -159,38 +115,12 @@
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
             <td>
-              <button class="btn btn-primary" (click)="takeRekSuggestion(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
+              <button class="btn btn-primary"  routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)">Show all</button>
             </td>
- 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Suggestions</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <tr *ngFor="let cat of  suggestion">
-                <td>{{cat.name}}</td>
-                <td>{{cat.message}}</td>
-              </tr>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-         
           </tbody>
         </table>
 
       </div>
-    </div>
   </div>
-
+</div>
 </main>

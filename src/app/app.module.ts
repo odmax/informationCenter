@@ -15,6 +15,12 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { RecognizedComponent } from './recognized/recognized.component';
 import { AnonymousComponent } from './anonymous/anonymous.component';
+import { RecComplimentComponent } from './rec-compliment/rec-compliment.component';
+import { RecComplaintComponent } from './rec-complaint/rec-complaint.component';
+import { RecSuggestionComponent } from './rec-suggestion/rec-suggestion.component';
+import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
+import { AnonComplimentComponent } from './anon-compliment/anon-compliment.component';
+import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import { AnonymousComponent } from './anonymous/anonymous.component';
     AdminHeaderComponent,
     AdminSidenavComponent,
     RecognizedComponent,
-    AnonymousComponent
+    AnonymousComponent,
+    RecComplimentComponent,
+    RecComplaintComponent,
+    RecSuggestionComponent,
+    AnonComplaintComponent,
+    AnonComplimentComponent,
+    AnonSuggestionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Anonymous</h1>
+    
+    <div class="dropdown show">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Category
+    </a>
+    
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item"  *ngFor = "let cat of categories" (click)="RecgetCatId(cat)">{{cat.name}}</a>
+       
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ANONYMOUS ID</th>
+        <th scope="col">MESSAGE</th>
+        <th scope="col">CATEGORY ID</th>
+        <th scope="col">DATE</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of anonComplaint">
+        <td>{{cat.id_anom}}</td>
+        <td>{{cat.message}}</td>
+        <td>{{cat.id}}</td>
+        <td>{{cat.date_time}}</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</main>
