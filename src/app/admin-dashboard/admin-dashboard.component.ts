@@ -8,10 +8,7 @@ import {UserService} from 'src/app/user.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
- /* @Input()anonymousData={
-    id: " ", message: " "
-   
- }*/
+
   @Input()recogniseData={
     cat_id:" ",name: " ", surname: " ", contact: " ", email: " ", message: " "
     

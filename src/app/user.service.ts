@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,9 +30,7 @@ export class UserService {
   anonymousPost ='http://localhost:8080/anonymous';
   recognisePost = 'http://localhost:8080/recognized';
 
-
-
-
+  
   
 
   constructor(private http:HttpClient) { }
@@ -52,6 +49,7 @@ export class UserService {
   {
     return this.http.post<any>(this.recognisePost, user, {});
   }
+
   public getAdminLogIn()
   {
     return this.http.get<any>(this.AdminLogInUrl);
