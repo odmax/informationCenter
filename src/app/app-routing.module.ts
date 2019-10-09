@@ -8,6 +8,7 @@ import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import {RecognizedComponent} from './recognized/recognized.component';
 import {AnonymousComponent} from './anonymous/anonymous.component';
+import {AnonymousDashbordComponent} from './anonymous-dashbord/anonymous-dashbord.component';
 
 
 
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'admin-sidenav', component: AdminSidenavComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'recognized',component:RecognizedComponent},
-  {path: 'anonymous',component:AnonymousComponent}
+  {path: 'anonymous',component:AnonymousComponent},
+  {path: 'anonymous-dashbord',component:AnonymousDashbordComponent}
 
 ];
 

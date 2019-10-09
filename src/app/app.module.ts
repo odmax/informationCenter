@@ -15,6 +15,7 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { RecognizedComponent } from './recognized/recognized.component';
 import { AnonymousComponent } from './anonymous/anonymous.component';
+import { AnonymousDashbordComponent } from './anonymous-dashbord/anonymous-dashbord.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AnonymousComponent } from './anonymous/anonymous.component';
     AdminHeaderComponent,
     AdminSidenavComponent,
     RecognizedComponent,
-    AnonymousComponent
+    AnonymousComponent,
+    AnonymousDashbordComponent
   ],
   imports: [
     BrowserModule,
