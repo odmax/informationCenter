@@ -15,6 +15,7 @@ import { AnonComplimentComponent } from './anon-compliment/anon-compliment.compo
 import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
 import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
 import { TestingComponent} from './testing/testing.component';
+import { AnonymousDashbordComponent} from './anonymous-dashbord/anonymous-dashbord.component';
 
 
 
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'rec-suggestion',component:RecSuggestionComponent},
   {path: 'anon-complaint',component:AnonComplaintComponent},
   {path:'anon-compliment',component:AnonComplimentComponent},
-  {path:'anon-suggestion',component:AnonSuggestionComponent}
+  {path:'anon-suggestion',component:AnonSuggestionComponent},
+  {path: 'anonymous-dashbord', component: AnonymousDashbordComponent}
 
 ];
 
