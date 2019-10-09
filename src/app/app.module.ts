@@ -16,6 +16,7 @@ import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { AdminComplaintsComponent } from './admin-complaints/admin-complaints.component';
 import { AdminComplimentsComponent } from './admin-compliments/admin-compliments.component';
 import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions.component';
+import { TestingComponent } from './testing/testing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions
     AdminSidenavComponent,
     AdminComplaintsComponent,
     AdminComplimentsComponent,
-    AdminSuggestionsComponent
+    AdminSuggestionsComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,

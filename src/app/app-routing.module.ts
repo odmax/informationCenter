@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminComplaintsComponent } from './admin-complaints/admin-complaints.component';
 import { AdminComplimentsComponent } from './admin-compliments/admin-compliments.component';
 import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions.component';
+import { TestingComponent} from './testing/testing.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
     path: '', component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
+      {path: 'testing', component: TestingComponent}
     ]
   },
 
