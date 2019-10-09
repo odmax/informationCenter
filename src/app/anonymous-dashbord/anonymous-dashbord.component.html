@@ -64,7 +64,7 @@
               <td *ngIf="i<5">{{cat.Category}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" (click)="takeRekCompliment(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+            <td><button class="btn btn-primary" (click)="takeAnonycomplents(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
              <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -111,7 +111,7 @@
               <td *ngIf="i<5">{{cat.message}}</td>
              
             </tr>
-            <td><button class="btn btn-primary" (click)="takeRekcomplaints(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
+            <td><button class="btn btn-primary" (click)="takeAnonycomplaints(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
              <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -162,7 +162,7 @@
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
             <td>
-              <button class="btn btn-primary" (click)="takeRekSuggestion(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
+              <button class="btn btn-primary" (click)="takeAnonySuggestion(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
             </td>
  
   <!-- Modal -->
