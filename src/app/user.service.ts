@@ -30,7 +30,8 @@ export class UserService {
   AdminLogInUrl = 'http://localhost:8080/admin';
   anonymousPost ='http://localhost:8080/anonymous';
   recognisePost = 'http://localhost:8080/recognized';
-  
+
+
 
 
   
