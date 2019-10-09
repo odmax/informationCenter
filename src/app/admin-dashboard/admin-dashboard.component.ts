@@ -8,10 +8,7 @@ import {UserService} from 'src/app/user.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
- /* @Input()anonymousData={
-    id: " ", message: " "
-   
- }*/
+
   @Input()recogniseData={
     cat_id:" ",name: " ", surname: " ", contact: " ", email: " ", message: " "
     
@@ -26,14 +23,17 @@ export class AdminDashboardComponent implements OnInit {
  categoryName:any;
  categoryName1:any;
  Recognized=[];
+ complaints=[];
+ compliment=[];
+ suggestion=[];
 
 
   ngOnInit() {
 
-   
-      return this.userService.getRecognized().subscribe(response=>
-      this.Recognized = response);
-       
+    this.getAllRac();  
+    this.takeRekcomplaints();
+    this.takeRekCompliment();
+    this.takeRekSuggestion();
        
       }
 
@@ -50,19 +50,28 @@ export class AdminDashboardComponent implements OnInit {
     this.categoryName1=e.name;
     this.test=true;
       }
-      /*
-     
 
-      takeAnonymousData(e){
-        this.categoryData.id= e.id;
-        this.anonymousData.id = this.categoryData.id;
-        console.log(this.anonymousData.id);
-        console.log(this.anonymousData.message);
-        this.categoryName=e.name;
-        this.test=true;
-        console.log(e);
+      getAllRac()
+      {
+        return this.userService.getRecognized().subscribe(response=>
+          this.Recognized = response);
       }
-      */
+
+      takeRekcomplaints()
+      {
+        return this.userService.getRecogComplaint().subscribe(data=>
+        this.complaints = data);
+      }
+      takeRekCompliment()
+      {
+        return this.userService.getRecogCompliment().subscribe(data=>
+          this.compliment = data);
+      }
+     takeRekSuggestion()
+     {
+       return this.userService.getRecogSuggestion().subscribe(data=>
+        this.suggestion = data);
+     }
   }
   
 

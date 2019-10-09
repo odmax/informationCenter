@@ -13,10 +13,14 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
-import { AdminComplaintsComponent } from './admin-complaints/admin-complaints.component';
-import { AdminComplimentsComponent } from './admin-compliments/admin-compliments.component';
-import { AdminSuggestionsComponent } from './admin-suggestions/admin-suggestions.component';
-import { TestingComponent } from './testing/testing.component';
+import { RecognizedComponent } from './recognized/recognized.component';
+import { AnonymousComponent } from './anonymous/anonymous.component';
+import { RecComplimentComponent } from './rec-compliment/rec-compliment.component';
+import { RecComplaintComponent } from './rec-complaint/rec-complaint.component';
+import { RecSuggestionComponent } from './rec-suggestion/rec-suggestion.component';
+import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
+import { AnonComplimentComponent } from './anon-compliment/anon-compliment.component';
+import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +32,14 @@ import { TestingComponent } from './testing/testing.component';
     AdminSigninComponent,
     AdminHeaderComponent,
     AdminSidenavComponent,
-    AdminComplaintsComponent,
-    AdminComplimentsComponent,
-    AdminSuggestionsComponent,
-    TestingComponent
+    RecognizedComponent,
+    AnonymousComponent,
+    RecComplimentComponent,
+    RecComplaintComponent,
+    RecSuggestionComponent,
+    AnonComplaintComponent,
+    AnonComplimentComponent,
+    AnonSuggestionComponent
   ],
   imports: [
     BrowserModule,
