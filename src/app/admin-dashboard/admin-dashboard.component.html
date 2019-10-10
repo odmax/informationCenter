@@ -1,11 +1,14 @@
 <app-admin-header></app-admin-header>
+<div class="card-wrapper">
+  <div id="card-1" class="card card-rotating text-center">
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Admin Dashboard</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
-        <button type="button" class="btn btn-success">Recognized</button>
-        <button type="button" class="btn btn-dark">Anonymous</button>
+         <button type="button" class="btn btn-success" routerLink="/admin-dashboard" routerLinkActive="router-link-active">Recognized</button>
+        <button type="button" class="btn btn-dark" routerLink="/anonymous-dashbord"  >Anonymous</button>
+        
       </div>
     </div>
   </div>

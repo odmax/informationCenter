@@ -17,21 +17,20 @@ export class UserService {
 //  anonySuggestionUrl ='http://168.172.185.162:8080/anonymous/suggestion';
 //   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
 
-  anonymousUrl ='http://192.168.137.1:8080/anonymous/GetAll';
-  categoryUrl = 'http://192.168.137.1:8080/category';
-  recognizedUrl ='http://192.168.137.1:8080/recognized/GetAll';
-  complaintsUrl ='http://192.168.137.1:8080/recognized/complain/2';
-  complimentsUrl='http://192.168.137.1:8080/recognized/compliment/1';
-  suggestionUrl='http://192.168.137.1:8080/recognized/suggestion/3';
-  anonyComplainUrl ='http://192.168.137.1:8080/anonymous/complain/2';
-  anonyComplimentUrl='http://192.168.137.1:8080/anonymous/compliment/1';
-  anonySuggestionUrl ='http://192.168.137.1:8080/anonymous/suggestion/3';
-  AdminLogInUrl = 'http://192.168.137.1:8080/admin';
-  anonymousPost ='http://192.168.137.1:8080/anonymous';
-  recognisePost = 'http://192.168.137.1:8080/recognized';
+  anonymousUrl ='http://localhost:8080/anonymous/GetAll';
+  categoryUrl = 'http://localhost:8080/category';
+  recognizedUrl ='http://localhost:8080/recognized/GetAll';
+  complaintsUrl ='http://localhost:8080/recognized/complain/2';
+  complimentsUrl='http://localhost:8080/recognized/compliment/1';
+  suggestionUrl='http://localhost:8080/recognized/suggestion/3';
+  anonyComplainUrl ='http://localhost:8080/anonymous/complain/2';
+  anonyComplimentUrl='http://localhost:8080/anonymous/compliment/1';
+  anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
+  AdminLogInUrl = 'http://localhost:8080/admin';
+  anonymousPost ='http://localhost:8080/anonymous';
+  recognisePost = 'http://localhost:8080/recognized';
+
   
-
-
   
 
   constructor(private http:HttpClient) { }
