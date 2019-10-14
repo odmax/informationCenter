@@ -1,44 +1,64 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service'
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-admin-signin',
   templateUrl: './admin-signin.component.html',
   styleUrls: ['./admin-signin.component.css']
 })
+
 export class AdminSigninComponent implements OnInit {
 
-  adminFm: FormGroup;
+  adminForm: FormGroup;
+  submitted: boolean = false;
+  invalidLogin: boolean = false;
 
   @Input() adminData = {
-    username: " ", password: " ", admin_id: " "
+    email: " ", password: " ", admin_id: " "
   }
-
-
   constructor(private userService: UserService, private router: Router, private adminserv: FormBuilder) { }
-  adLog: any;
-
-
+  private adLog:any;
   ngOnInit() {
-
+    this.adminForm = this.adminserv.group({
+      email: [
+              null, 
+              [
+                Validators.required
+              ]
+      ],
+      password:[
+                null,
+                [
+                Validators.required
+                ]
+            ]
+    });
   }
-
   AdminLogIn(f) {
-    // this.adminData.admin_id= f.admin_id;
-
-
-
-    // console.log("success", this.adminData.admin_id);
-    if (this.adminData.username == f.userName && this.adminData.password == f.password) {
-      this.userService.getAdminLogIn();
-      console.log("login successfull");
-
+    this.submitted = true;
+    if (this.adminForm.invalid) {
+      return;
     }
-    else {
-      console.log("You do not have Access");
-    }
+  
+    this.userService.getAdminLogIn().subscribe(
+      invalidLogin=>{
+        if(invalidLogin == false){
+          this.invalidLogin = true;
+        }
+        else{
+           this.router.navigate(['./admin-dashboard']);
+        }
+      }
+    );
+    /*
+      if(this.adminForm.controls.email.value == 'sam@gmail.com' && this.adminForm.controls.password.value == '123') {
+          this.router.navigate(['./admin-dashboard']);
+      }else {
+        this.invalidLogin = true;
+      }
+    */
   }
-
 }

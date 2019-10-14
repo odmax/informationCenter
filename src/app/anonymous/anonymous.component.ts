@@ -8,8 +8,6 @@ import{UserService} from 'src/app/user.service';
 })
 export class AnonymousComponent implements OnInit {
 
- 
-  
   constructor(private userService:UserService) { }
   Anonymous:[];
 

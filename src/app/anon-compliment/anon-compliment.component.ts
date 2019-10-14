@@ -10,16 +10,16 @@ export class AnonComplimentComponent implements OnInit {
 
   constructor(private userService:UserService) { }
   test=false;
-  anonCompliment=[];
+ compliment=[];
  
    ngOnInit() {
-     this.takeAllAnonCompliment();
+     this.takeAllAnonyCompliment();
    }
  
-   takeAllAnonCompliment()
+   takeAllAnonyCompliment()
    {
-     return this.userService.getAnonymComplaint().subscribe(response =>
-      this.anonCompliment = response);
+     return this.userService.getAnonymCompliment().subscribe(data =>
+      this.compliment=data);
        
    }
 }

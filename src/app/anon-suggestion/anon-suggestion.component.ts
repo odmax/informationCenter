@@ -10,16 +10,16 @@ export class AnonSuggestionComponent implements OnInit {
 
   constructor(private userService:UserService) { }
   test=false;
- anonSugg=[];
+  suggestion=[];
 
   ngOnInit() {
-    this.takeAllAnonSuggestion();
+    this.takeAllAnonySuggestion();
   }
 
-  takeAllAnonSuggestion()
+  takeAllAnonySuggestion()
   {
-    return this.userService.getAnonymSuggestion().subscribe(response =>
-     this.anonSugg = response);
+    return this.userService.getAnonymSuggestion().subscribe(data =>
+     this.suggestion = data);
       
   }
 }
