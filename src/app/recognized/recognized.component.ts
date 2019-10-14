@@ -22,11 +22,22 @@ export class RecognizedComponent implements OnInit {
   categories:any;
   catName:any;
   ngOnInit() {
+    this.getRec();
+    this.getCategory();
     
-    return this.userService.getRecognized().subscribe(response=>
-      this.Recognized = response);
   }
 
+    getRec()
+    {
+      return this.userService.getRecognized().subscribe(response=>
+        this.Recognized = response);
+    }
+
+    getCategory()
+    {
+      return this.userService.getCategory().subscribe(response =>
+        this.categories = console.log(response));
+    }
 
       categoryrec(e)
       {
