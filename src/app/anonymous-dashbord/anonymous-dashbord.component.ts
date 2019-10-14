@@ -30,10 +30,11 @@ export class AnonymousDashbordComponent implements OnInit {
   ngOnInit() {
   
     this.getAllAnony();  
-    this.takeAnonycomplaints();
+    this.takeAnonComplaints();
     this.takeAnonyCompliment();
     this.takeAnonySuggestion();
-       
+
+  
       }
       takeAnogetCatId(e){
         this.categoryData.id= e.id;
@@ -53,7 +54,7 @@ export class AnonymousDashbordComponent implements OnInit {
           this.Anonymous = response);
       }
   
-      takeAnonycomplaints()
+      takeAnonComplaints()
       {
         return this.userService.getAnonymComplaint().subscribe(data=>
         this.complaints = data);
@@ -70,3 +71,4 @@ export class AnonymousDashbordComponent implements OnInit {
      }
   }
 
+  

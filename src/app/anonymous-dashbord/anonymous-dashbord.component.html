@@ -61,33 +61,11 @@
 
           <tbody>
             <tr *ngFor="let cat of compliment; let i = index">
-              <td *ngIf="i<5">{{cat.category}}</td> 
+              <td *ngIf="i<5">{{cat.id}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" (click)="takeAnonycomplents(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
-             <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Compliments</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <tr *ngFor="let cat of  Recognized">
-                  <td>{{cat.Category}}</td>
-                  <td>{{cat.message}}</td>
-                </tr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+            <td><button class="btn btn-primary" routerLink="/anon-compliment" (click)=" takeAnonyCompliment()(cat)">Show all</button></td>
+    
           </tbody>
         </table>
 
@@ -107,34 +85,12 @@
           </thead>
           <tbody>
             <tr *ngFor="let cat of  complaints; let i = index">
-              <td *ngIf="i<5">{{cat.Category}}</td>
+              <td *ngIf="i<5">{{cat.id}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
              
             </tr>
-            <td><button class="btn btn-primary" (click)="takeAnonycomplaints(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button></td>
-             <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Complaints</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <tr *ngFor="let cat of  Recognized">
-                  <td>{{cat.Category}}</td>
-                  <td>{{cat.message}}</td>
-                </tr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+            <td><button class="btn btn-primary" routerLink="/anon-complaint" (click)="takeAnonComplaints(cat)" >Show all</button></td>
+          
           </tbody>
         </table>
 
@@ -149,7 +105,7 @@
 
           <thead>
             <tr>
-              <th scope="row">Category</th>
+              <th scope="row">category</th>
               <th scope="row">Message</th>
 
             
@@ -157,38 +113,14 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let cat of  suggestion; let i = index">
-              <td *ngIf="i<5">{{cat.Category}}</td>
+            <tr *ngFor="let cat of suggestion; let i = index">
+              <td *ngIf="i<5">{{cat.id}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
             <td>
-              <button class="btn btn-primary" (click)="takeAnonySuggestion(cat)" data-toggle="modal" data-target="#exampleModalLong">Show all</button>
+              <button class="btn btn-primary"  routerLink="/anon-suggestion" (click)="takeAnonySuggestion(cat)" >Show all</button>
             </td>
  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Suggestions</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <tr *ngFor="let cat of  suggestion">
-                <td>{{cat.Category}}</td>
-                <td>{{cat.message}}</td>
-              </tr>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-         
           </tbody>
         </table>
 

@@ -17,7 +17,7 @@ export class AdminSigninComponent implements OnInit {
   invalidLogin: boolean = false;
 
   @Input() adminData = {
-    username: " ", password: " ", admin_id: " "
+    email: " ", password: " ", admin_id: " "
   }
   constructor(private userService: UserService, private router: Router, private adminserv: FormBuilder) { }
   private adLog:any;
@@ -28,6 +28,7 @@ export class AdminSigninComponent implements OnInit {
               [
                 Validators.required,
               
+                Validators.required
               ]
       ],
       password:[
@@ -42,3 +43,28 @@ export class AdminSigninComponent implements OnInit {
 }
 
 
+  // AdminLogIn(f) {
+  //   this.submitted = true;
+  //   if (this.adminForm.invalid) {
+  //     return;
+  //   }
+  
+    this.userService.getAdminLogIn().subscribe(
+      invalidLogin=>{
+        if(invalidLogin == false){
+          this.invalidLogin = true;
+        }
+        else{
+           this.router.navigate(['./admin-dashboard']);
+        }
+      }
+    );
+    /*
+      if(this.adminForm.controls.email.value == 'sam@gmail.com' && this.adminForm.controls.password.value == '123') {
+          this.router.navigate(['./admin-dashboard']);
+      }else {
+        this.invalidLogin = true;
+      }
+    */
+  }
+}

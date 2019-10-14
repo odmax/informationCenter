@@ -11,7 +11,7 @@ export class AnonComplaintComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   test=false;
- anonComplaint=[];
+ complaints=[];
 
   ngOnInit() {
     this.takeAllAnonComplaint();
@@ -20,7 +20,7 @@ export class AnonComplaintComponent implements OnInit {
   takeAllAnonComplaint()
   {
     return this.userService.getAnonymComplaint().subscribe(response =>
-     this.anonComplaint = response);
+     this.complaints = response);
       
   }
 
