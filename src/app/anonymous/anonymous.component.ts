@@ -8,6 +8,16 @@ import{UserService} from 'src/app/user.service';
 })
 export class AnonymousComponent implements OnInit {
 
+  @Input()feedBackData={
+     anony_reply: " ",recognized_reply: " ",category_id: " "
+  }
+ 
+  @Input()categoryData={
+    id: " ", name: " "
+  }
+  categoryName: any;
+  test=false;
+
  
   
   constructor(private userService:UserService) { }
@@ -23,6 +33,24 @@ export class AnonymousComponent implements OnInit {
      this.Anonymous = response);
       
   }
+
+  feedBack()
+  {
+    this.userService.PostFeedback(this.feedBackData).subscribe(data=>
+      console.log(data));
+  }
+
+  // sendAnomRes(e)
+  // {
+  //   this.categoryData.id= e.id;
+  //   this.feedBackData.category_id = this.categoryData.id;
+  //   console.log(this.feedBackData.category_id);
+  //   console.log(this.feedBackData.anony_reply);
+  //   this.categoryName=e.name;
+  //   this.test=true;
+  //   console.log(e);
+  // }
+
 
 
 }

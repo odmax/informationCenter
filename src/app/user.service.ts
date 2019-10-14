@@ -18,7 +18,7 @@ export class UserService {
 //   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
 
   anonymousUrl ='http://localhost:8080/anonymous/GetAll';
-  categoryUrl = 'http://localhost:8080/category';
+  categoryUrl = 'http://localhost:8080/';
   recognizedUrl ='http://localhost:8080/recognized/GetAll';
   complaintsUrl ='http://localhost:8080/recognized/complain/2';
   complimentsUrl='http://localhost:8080/recognized/compliment/1';
@@ -29,6 +29,11 @@ export class UserService {
   AdminLogInUrl = 'http://localhost:8080/admin';
   anonymousPost ='http://localhost:8080/anonymous';
   recognisePost = 'http://localhost:8080/recognized';
+  getAllFeedBAck= "http://localhost:8080/feedback/GetAll";
+  getFeedBackComplain = "http://localhost:8080/feedback/complain/2";
+  getFeedBackSuggestion = "http://localhost:8080/feedback/suggestion/3";
+  postFeedBack = "http://localhost:8080/feedback";
+  postFeedbackComplain = "";
 
   
   
@@ -42,7 +47,7 @@ export class UserService {
 
   public getCategory()
   {
-    return this.http.get<any>(this.categoryUrl);
+    return this.http.get<any>(this.categoryUrl + 'category');
   }
 
   public PostRecognized(user)
@@ -92,6 +97,10 @@ public getAnonymSuggestion()
 {
   return this.http.get<any>(this.anonySuggestionUrl);
 }
+public PostFeedback(user)
+  {
+    return this.http.post<any>(this.postFeedBack,user, {});
+  }
 
 
 }

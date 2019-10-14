@@ -39,10 +39,10 @@
         </button>
       </div>
       <div class="modal-body">
-         <textarea style="width: 100%;"></textarea>
+         <textarea [(ngModel)]="feedBackData.anony_reply" style="width: 100%;" name="anony_reply"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Reply</button>
+        <button type="button" class="btn btn-secondary" (click)="feedBack()" data-dismiss="modal">Reply</button>
    
       </div>
     </div>

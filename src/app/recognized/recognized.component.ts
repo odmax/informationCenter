@@ -28,24 +28,7 @@ export class RecognizedComponent implements OnInit {
 
       category()
       {
-        if (this.categoryData.id ="1")
-        {
-          this.categoryData.id=this.catName;
-          this.catName= "Compliment";
-
-          if(this.categoryData.id ="2")
-          {
-            this.categoryData.id=this.catName;
-            this.catName= "Complaint";
-
-          if(this.categoryData.id ="3")
-          {
-            this.categoryData.id=this.catName;
-            this.catName= "Suggestion";
-          }
-          }
-        }
-
+       
       }
 
 

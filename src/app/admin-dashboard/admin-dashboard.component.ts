@@ -17,6 +17,9 @@ export class AdminDashboardComponent implements OnInit {
   id: " ", name: " "
 }
 
+
+
+
   constructor(private userService:UserService) { }
   categories:any;
   test=false;
@@ -72,6 +75,7 @@ export class AdminDashboardComponent implements OnInit {
        return this.userService.getRecogSuggestion().subscribe(data=>
         this.suggestion = data);
      }
+   
   }
   
 

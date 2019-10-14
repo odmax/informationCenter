@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   }
   @Input()recogniseData={
     cat_id:" ",name: " ", surname: " ", contact: " ", email: " ", message: " "
-   
  }
 
  test=false;
@@ -74,6 +73,7 @@ export class HomeComponent implements OnInit {
     this.userService.PostRecognized(this.recogniseData).subscribe(data =>
     console.log(data));
   }
+
 
 
 }
