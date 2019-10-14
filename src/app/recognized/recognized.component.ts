@@ -11,24 +11,30 @@ export class RecognizedComponent implements OnInit {
   @Input()categoryData={
     id: " ", name: " "
   }
+  @Input()feedBackData={
+    anony_reply: " ",recognized_reply: " ",category_id: " "
+  }
+  test: boolean;
 
   constructor(private userService:UserService) { }
 
   Recognized=[];
+  categories:any;
   catName:any;
   ngOnInit() {
-    this.getAllRac(); 
+    
+    return this.userService.getRecognized().subscribe(response=>
+      this.Recognized = response);
   }
 
-  getAllRac()
-      {
-        return this.userService.getRecognized().subscribe(response=>
-          this.Recognized = response);
-      }
 
-      category()
+      categoryrec(e)
       {
-       
+        this.categoryData.id= e.id;
+        this.feedBackData.category_id = this.categoryData.id;
+        this.catName = e.name;
+        this.test=true;
+        console.log(e);
       }
 
 
