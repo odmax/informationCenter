@@ -1,1 +1,9 @@
 @import '../styles/style.css';
+
+.navbar-brand{
+	float:right;
+	color:white;
+	width:100px;
+	font-size:40px;
+	font-family:Century Gothic;
+}

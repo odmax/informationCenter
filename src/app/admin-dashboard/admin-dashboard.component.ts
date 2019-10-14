@@ -64,6 +64,7 @@ export class AdminDashboardComponent implements OnInit {
       {
         return this.userService.getRecogComplaint().subscribe(data=>
         this.complaints = data);
+          
       }
       takeRekCompliment()
       {

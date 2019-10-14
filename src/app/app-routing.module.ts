@@ -23,6 +23,7 @@ const routes: Routes = [
     path: '', component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
+      //{path: 'testing', component: TestingComponent}
     ]
   },
 

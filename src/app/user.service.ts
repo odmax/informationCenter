@@ -6,16 +6,18 @@ import {HttpClient} from '@angular/common/http'
 })
 export class UserService {
 
-//   anonymousUrl ='http://168.172.185.162:8080/anonymous';
-//   categoryUrl = 'http://168.172.185.162:8080/category';
-//   recognizedUrl ='http://168.172.185.162:8080/recognized/GetAll';
-//   complaintsUrl ='http://168.172.185.162:8080/recognized/complaint';
-//   complimentsUrl='http://168.172.185.162:8080/recognized/compliment';
-//   suggestionUrl=' http://168.172.185.162:8080/recognized/suggestion';
-//   anonyComplainUrl ='http://168.172.185.162:8080/anonymous/complaint';
-//   anonyComplimentUrl='http://168.172.185.162:8080/anonymous/compliment';
-//  anonySuggestionUrl ='http://168.172.185.162:8080/anonymous/suggestion';
-//   AdminLogInUrl = 'http://168.172.185.162:8080/admin';
+  // anonymousUrl ='http://192.168.137.1:8080/anonymous/GetAll';
+  // categoryUrl = 'http://192.168.137.1:8080/category';
+  // recognizedUrl ='http://192.168.137.1:8080/recognized/GetAll';
+  // complaintsUrl ='http://192.168.137.1:8080/recognized/complain/2';
+  // complimentsUrl='http://192.168.137.1:8080/recognized/compliment/1';
+  // suggestionUrl='http://192.168.137.1:8080/recognized/suggestion/3';
+  // anonyComplainUrl ='http://192.168.137.1:8080/anonymous/complain/2';
+  // anonyComplimentUrl='http://192.168.137.1:8080/anonymous/compliment/1';
+  // anonySuggestionUrl ='http://192.168.137.1:8080/anonymous/suggestion/3';
+  // AdminLogInUrl = 'http://192.168.137.1:8080/admin';
+  // anonymousPost ='http://192.168.137.1:8080/anonymous';
+  // recognisePost = 'http://192.168.137.1:8080/recognized';
 
   anonymousUrl ='http://localhost:8080/anonymous/GetAll';
   categoryUrl = 'http://localhost:8080/';
@@ -29,10 +31,10 @@ export class UserService {
   AdminLogInUrl = 'http://localhost:8080/admin';
   anonymousPost ='http://localhost:8080/anonymous';
   recognisePost = 'http://localhost:8080/recognized';
-  getAllFeedBAck= "http://localhost:8080/feedback/GetAll";
-  getFeedBackComplain = "http://localhost:8080/feedback/complain/2";
-  getFeedBackSuggestion = "http://localhost:8080/feedback/suggestion/3";
-  postFeedBack = "http://localhost:8080/feedback";
+  getAllFeedBAck= 'http://localhost:8080/feedback/GetAll';
+  getFeedBackComplain = 'http://localhost:8080/feedback/complain/2';
+  getFeedBackSuggestion = 'http://localhost:8080/feedback/suggestion/3';
+  postFeedBack = 'http://localhost:8080/feedback';
   postFeedbackComplain = "";
 
   
