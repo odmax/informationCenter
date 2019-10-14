@@ -1,7 +1,11 @@
 .navbar-brand{
 	float:right;
 	color:white;
-	width:210px;
+	width:180px;
 	font-size:40px;
 	font-family:Century Gothic;
+}
+
+#ad-icon{
+	margin-right: 5px;
 }

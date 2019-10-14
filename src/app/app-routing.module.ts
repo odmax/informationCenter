@@ -14,8 +14,7 @@ import { RecSuggestionComponent } from './rec-suggestion/rec-suggestion.componen
 import { AnonComplimentComponent } from './anon-compliment/anon-compliment.component';
 import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
 import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
-import { TestingComponent} from './testing/testing.component';
-import { AnonymousDashbordComponent} from './anonymous-dashbord/anonymous-dashbord.component';
+import { AnonymousDashbordComponent } from './anonymous-dashbord/anonymous-dashbord.component';
 
 
 
@@ -24,7 +23,7 @@ const routes: Routes = [
     path: '', component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
-      {path: 'testing', component: TestingComponent}
+      //{path: 'testing', component: TestingComponent}
     ]
   },
 
@@ -41,7 +40,7 @@ const routes: Routes = [
   {path: 'anon-complaint',component:AnonComplaintComponent},
   {path:'anon-compliment',component:AnonComplimentComponent},
   {path:'anon-suggestion',component:AnonSuggestionComponent},
-  {path: 'anonymous-dashbord', component: AnonymousDashbordComponent}
+  {path: 'anonymous-dashbord', component:AnonymousDashbordComponent}
 
 ];
 

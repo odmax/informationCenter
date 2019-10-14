@@ -21,8 +21,8 @@ import { RecSuggestionComponent } from './rec-suggestion/rec-suggestion.componen
 import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
 import { AnonComplimentComponent } from './anon-compliment/anon-compliment.component';
 import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
-import { TestingComponent} from './testing/testing.component';
 import {AnonymousDashbordComponent} from './anonymous-dashbord/anonymous-dashbord.component';
+import {TestingComponent} from './testing/testing.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +42,8 @@ import {AnonymousDashbordComponent} from './anonymous-dashbord/anonymous-dashbor
     AnonComplaintComponent,
     AnonComplimentComponent,
     AnonSuggestionComponent,
-    TestingComponent,
-    AnonymousDashbordComponent
+    AnonymousDashbordComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,

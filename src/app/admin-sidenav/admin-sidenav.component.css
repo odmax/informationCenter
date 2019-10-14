@@ -4,3 +4,9 @@
     text-align: center;
     padding-top: 20px;
 }
+
+.img-thumbnail
+{
+    width: 200px;
+    height: 200px;
+}
