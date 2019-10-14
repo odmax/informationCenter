@@ -19,7 +19,6 @@ export class UserService {
   // anonymousPost ='http://192.168.137.1:8080/anonymous';
   // recognisePost = 'http://192.168.137.1:8080/recognized';
 
-<<<<<<< HEAD
   anonymousUrl ='http://localhost:8080/anonymous/GetAll';
   categoryUrl = 'http://localhost:8080/';
   recognizedUrl ='http://localhost:8080/recognized/GetAll';
@@ -37,20 +36,6 @@ export class UserService {
   getFeedBackSuggestion = 'http://localhost:8080/feedback/suggestion/3';
   postFeedBack = 'http://localhost:8080/feedback';
   postFeedbackComplain = "";
-=======
-  anonymousUrl ='http://192.168.137.1:8080/anonymous/GetAll';
-  categoryUrl = 'http://192.168.137.1:8080/category';
-  recognizedUrl ='http://192.168.137.1:8080/recognized/GetAll';
-  complaintsUrl ='http://192.168.137.1:8080/recognized/complain/2';
-  complimentsUrl='http://192.168.137.1:8080/recognized/compliment/1';
-  suggestionUrl='http://192.168.137.1:8080/recognized/suggestion/3';
-  anonyComplainUrl ='http://192.168.137.1:8080/anonymous/complain/2';
-  anonyComplimentUrl='http://192.168.137.1:8080/anonymous/compliment/1';
-  anonySuggestionUrl ='http://192.168.137.1:8080/anonymous/suggestion/3';
-  AdminLogInUrl = 'http://192.168.137.1:8080/admin';
-  anonymousPost ='http://192.168.137.1:8080/anonymous';
-  recognisePost = 'http://192.168.137.1:8080/recognized';
->>>>>>> origin/Nonhlanhla
 
   
   
