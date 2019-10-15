@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import{UserService} from 'src/app/user.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
   selector: 'app-anonymous',
@@ -17,21 +18,18 @@ export class AnonymousComponent implements OnInit {
   }
   categoryName: any;
   test=false;
+  categories: any;
+  Recognized: any;
 
  
   
   constructor(private userService:UserService) { }
-  Anonymous:[];
+  Anonymous:any;
 
   ngOnInit() {
     
-    this.getAllANonyMous();
-  }
-  getAllANonyMous()
-  {
-    return this.userService.getAnonymous().subscribe(response =>
-     this.Anonymous = response);
-      
+    this.getCategory();
+    this.getAnom();
   }
 
   feedBack()
@@ -39,18 +37,23 @@ export class AnonymousComponent implements OnInit {
     this.userService.PostFeedback(this.feedBackData).subscribe(data=>
       console.log(data));
   }
+  getAnom()
+  {
+    return this.userService.getAnonymous().subscribe(response =>{
+      this.Anonymous = response;
+      console.log(this.Anonymous)
+    })
+      
+  }
 
-  // sendAnomRes(e)
-  // {
-  //   this.categoryData.id= e.id;
-  //   this.feedBackData.category_id = this.categoryData.id;
-  //   console.log(this.feedBackData.category_id);
-  //   console.log(this.feedBackData.anony_reply);
-  //   this.categoryName=e.name;
-  //   this.test=true;
-  //   console.log(e);
-  // }
-
+  getCategory()
+  {
+    return this.userService.getCategory().subscribe(response => {
+      this.categories = response;
+      console.log(response)
+    })
+    
+  }
 
 
 }

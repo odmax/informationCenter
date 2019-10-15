@@ -3,31 +3,43 @@
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Anonymous</h1>
     
-    <form>
+    
     <div class="search-container">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" placeholder="Search.." name="search" ng-model="globalSearch.$">
+      <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
       </div>
-    </form>
+
+      <!-- <div>
+        <input type="text" [(ngModel)]="term">
+        <div *ngFor = "let ann of Anonymous |filter:term" >
+          <p>
+            {{ann.name}}
+          </p>
+        </div>
+      </div> -->
+    
 
   
   </div>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">ANONYMOUS ID</th>
+        
         <th scope="col">MESSAGE</th>
-        <th scope="col">CATEGORY ID</th>
+        <th scope="col">CATEGORY</th>
        <th scope="col" >RESPONCE</th>
         
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let cat of Anonymous">
-        <td>{{cat.id_anom}}</td>
+        
         <td>{{cat.message}}</td>
-        <td>{{cat.id}}</td>
-        <td><button  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Reply</button>
+        <td>
+            <div *ngFor = "let rat of categories">
+              <div *ngIf = "cat.id === rat.id">{{rat.name}}</div>
+            </div>
+        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Reply</button>
     
       </tr>
       

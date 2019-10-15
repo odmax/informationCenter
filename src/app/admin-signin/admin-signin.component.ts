@@ -22,25 +22,25 @@ export class AdminSigninComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private adminserv: FormBuilder) { }
   private adLog:any;
   ngOnInit() {
-    this.adminForm = this.adminserv.group({
-      email: [
-              null, 
-              [
-                Validators.required,
+//     this.adminForm = this.adminserv.group({
+//       email: [
+//               null, 
+//               [
+//                 Validators.required,
               
-                Validators.required
-              ]
-      ],
-      password:[
-                null,
-                [
-                Validators.required
-                ]
-            ]
-    });
-  }
+//                 Validators.required
+//               ]
+//       ],
+//       password:[
+//                 null,
+//                 [
+//                 Validators.required
+//                 ]
+//             ]
+//     });
+//   }
 
-}
+// }
 
 
   // AdminLogIn(f) {
@@ -49,16 +49,16 @@ export class AdminSigninComponent implements OnInit {
   //     return;
   //   }
   
-    this.userService.getAdminLogIn().subscribe(
-      invalidLogin=>{
-        if(invalidLogin == false){
-          this.invalidLogin = true;
-        }
-        else{
-           this.router.navigate(['./admin-dashboard']);
-        }
-      }
-    );
+    // this.userService.getAdminLogIn().subscribe(
+    //   invalidLogin=>{
+    //     if(invalidLogin == false){
+    //       this.invalidLogin = true;
+    //     }
+    //     else{
+    //        this.router.navigate(['./admin-dashboard']);
+    //     }
+    //   }
+    // );
     /*
       if(this.adminForm.controls.email.value == 'sam@gmail.com' && this.adminForm.controls.password.value == '123') {
           this.router.navigate(['./admin-dashboard']);
@@ -66,5 +66,6 @@ export class AdminSigninComponent implements OnInit {
         this.invalidLogin = true;
       }
     */
-  
+    }
+  }
 

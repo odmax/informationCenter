@@ -18,7 +18,7 @@ export class RecognizedComponent implements OnInit {
 
   constructor(private userService:UserService) { }
 
-  Recognized=[];
+  Recognized:any;
   categories:any;
   catName:any;
   ngOnInit() {
@@ -29,24 +29,23 @@ export class RecognizedComponent implements OnInit {
 
     getRec()
     {
-      return this.userService.getRecognized().subscribe(response=>
-        this.Recognized = response);
+      return this.userService.getRecognized().subscribe(response =>{
+        this.Recognized = response;
+        console.log(this.Recognized)
+      })
+        
     }
 
     getCategory()
     {
-      return this.userService.getCategory().subscribe(response =>
-        this.categories = console.log(response));
+      return this.userService.getCategory().subscribe(response => {
+        this.categories = response;
+        console.log(response)
+      })
+      
     }
 
-      categoryrec(e)
-      {
-        this.categoryData.id= e.id;
-        this.feedBackData.category_id = this.categoryData.id;
-        this.catName = e.name;
-        this.test=true;
-        console.log(e);
-      }
+    
 
 
 }
