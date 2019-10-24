@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import{UserService} from 'src/app/user.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Pipe, PipeTransform } from '@angular/core';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-anonymous',
@@ -16,10 +18,11 @@ export class AnonymousComponent implements OnInit {
   @Input()categoryData={
     id: " ", name: " "
   }
+
   categoryName: any;
   test=false;
   categories: any;
-  Recognized: any;
+  
 
  
   
