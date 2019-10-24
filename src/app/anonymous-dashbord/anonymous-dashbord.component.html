@@ -21,7 +21,7 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
       </div>
-      <a routerLink="/admin-compliments" class="btn btn-primary">View Compliments</a>
+      <a routerLink="/anon-compliment"  (click)=" takeAnonyCompliment(cat)" class="btn btn-primary">View Compliments</a>
     </div>
 
     <div class="card text-white bg-danger mb-3" id="cards">
@@ -31,7 +31,7 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
       </div>
-      <a routerLink="/admin-complaints" class="btn btn-danger">View Complaints</a>
+      <a routerLink="/anon-complaint"  (click)="takeAnonComplaints(cat)" class="btn btn-danger">View Complaints</a>
     </div>
     <div class="card text-white bg-warning mb-3" id="cards">
       <div class="card-header">Suggestions</div>
@@ -40,7 +40,7 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
       </div>
-      <a routerLink="/admin-suggestion" class="btn btn-warning" style="font:white">View Suggestions</a>
+      <a routerLink="/anon-suggestion" (click)="takeAnonySuggestion(cat)" class="btn btn-warning" style="font:white">View Suggestions</a>
     </div>
   </div>
 
@@ -54,22 +54,24 @@
 
           <thead>
             <tr>
-                <th scope="row">Category</th>
               <th scope="row">Message</th>
             </tr>
           </thead>
 
           <tbody>
             <tr *ngFor="let cat of compliment; let i = index">
-              <td *ngIf="i<5">{{cat.id}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" routerLink="/anon-compliment" (click)=" takeAnonyCompliment()(cat)">Show all</button></td>
-    
+            
           </tbody>
         </table>
 
       </div>
+      <hr>
+      <div class="text-center">
+   <button class="btn btn-primary" style="width: 40%;" routerLink="/anon-compliment" (click)=" takeAnonyCompliment(cat)">Show all</button>
+    </div>
+    <br>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
@@ -79,22 +81,23 @@
         <table class="table">
           <thead>
             <tr>
-                <th scope="row">Category</th>
               <th scope="row">Message</th>
               </tr>
           </thead>
           <tbody>
             <tr *ngFor="let cat of  complaints; let i = index">
-              <td *ngIf="i<5">{{cat.id}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
-             
             </tr>
-            <td><button class="btn btn-primary" routerLink="/anon-complaint" (click)="takeAnonComplaints(cat)" >Show all</button></td>
-          
+           
           </tbody>
         </table>
 
       </div>
+      <hr>
+      <div class="text-center">
+      <button class="btn btn-primary" style="width: 40%;" routerLink="/anon-complaint" (click)="takeAnonComplaints(cat)" >Show all</button>
+          </div>
+          <br>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
@@ -105,26 +108,25 @@
 
           <thead>
             <tr>
-              <th scope="row">category</th>
               <th scope="row">Message</th>
-
-            
             </tr>
           </thead>
 
           <tbody>
             <tr *ngFor="let cat of suggestion; let i = index">
-              <td *ngIf="i<5">{{cat.id}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td>
-              <button class="btn btn-primary"  routerLink="/anon-suggestion" (click)="takeAnonySuggestion(cat)" >Show all</button>
-            </td>
+           
  
           </tbody>
         </table>
 
       </div>
+<hr>
+      <div class ="text-center">
+        <button class="btn btn-primary" style="width: 40%;" routerLink="/anon-suggestion" (click)="takeAnonySuggestion(cat)" >Show all</button>
+      </div>
+      <br>
     </div>
   </div>
 

@@ -1,195 +1,247 @@
-
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../assets/images/img01.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/images/img02.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/images/img03.jpg" class="d-block w-100" alt="...">
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/images/img01.jpg" class="d-block w-100" alt="...">
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  
-  
-  
-      <div class="card col-12 text-center" style="width: 100%; padding: 50px">
-        <div class="card-body">
-          <p class="card-text">Welcome to Khuluma-Nathi, a website that assists both instituition and all
-            stakeholders involved with regards to communication and voicing your concerns.</p>
-  
-          <h5>  Choose whether you want to be recognized or if you would like to remain
-            anonymous below:
-          </h5>
-          <button class="button" style="vertical-align:middle" data-toggle="modal" data-target="#exampleModal"><span> Anonymous </span></button>
-          <button class="button" style="vertical-align:middle"  data-toggle="modal" data-target="#exampleModalCenter"><span>Recognised </span></button>
-           <!-- Button trigger modal -->
-
-
-       </div>
-      </div>
-  
-  
-      <!-- Button trigger modal -->
-  
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">ANONYMOUS</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        
-        <div class="modal-body">
-          <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Category
-          </a>
-          
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item"  *ngFor = "let cat of categories" (click)="AnogetCatId(cat)">{{cat.name}}</a>
-             
-            </div>
-          </div>
-        <form #hero="ngForm">
-           
-            <div *ngIf="test ===true" class="alert alert-warning" role="alert">
-                <p > We would like to hear your <b> {{categoryName}}!</b>
-                 
-                  </p>
-              </div>
-              <br>
-            <div class="form-group">
-              <p *ngIf="test ===true">Please type your {{categoryName}} below</p>
-            <textarea [(ngModel)]="anonymousData.message" class="form-control"  rows="3" name="message"
-              placeholder="type your text here"></textarea>
-            </div>
-
-       
-      </form>
-      <!--  <input placeholder="enter something nhere" [(ngModel)]="name"> -->
-  
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
-          <button type="button" class="btn btn-primary" (click)="anonymousReg(); hero.reset()" >Send</button>
-        </div>
-        <div *ngIf="status" class="alert alert-primary" role="alert">
-            <p > Your {{categoryName1}} has been submited! </p>
-        </div>
-      </div>
+    <div class="carousel-item">
+      <img src="../../assets/images/img02.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/images/img03.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">RECOGNIZED</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form #heroForm="ngForm">
-                <div class="form-group">
-  
-                  
-  
-                  <label for="exampleFormControlInput1">Name</label>
-                  <input [(ngModel)]= "recogniseData.name" type="text" class="form-control" formControlName="name" placeholder="Enter name e.g John"> 
-                  <label for="exampleFormControlInput1">Surname</label>
-                  <input [(ngModel)]= "recogniseData.surname" type="text" class="form-control" name="surname" placeholder="Enter surname e.g Doe">
-                  <label for="exampleFormControlInput1">Phone Number</label>
-                  <input [(ngModel)]= "recogniseData.contact" type="number" class="form-control" name="contact" placeholder="Contact number eg. 0123456789">
-                  <label for="exampleFormControlInput1">Email address</label>
-                  <input [(ngModel)]= "recogniseData.email" type="email" class="form-control" name="email" placeholder="name@example.com">
-                </div>
-                
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Category
-                </a>
-                
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item"  *ngFor = "let cat of categories" (click)="RecgetCatId(cat)">{{cat.name}}</a>
-                   
-                  </div>
-                </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 
-            <div *ngIf="test ===true" class="alert alert-warning" role="alert">
-                <p > We would like to hear your <b> {{categoryName1}}!</b>
-                </p>
-              </div>
-              <br>
-            <div class="form-group">
-              <p *ngIf="test ===true">Please type your {{categoryName1}} below</p>
-            <textarea [(ngModel)]="recogniseData.message" class="form-control"  rows="3" name="message"
-              placeholder="type your text here"></textarea>
-            </div>
+
+<div class="card col-12 text-center" style="width: 100%; padding: 50px">
+  <div class="card-body">
+    <p class="card-text">Welcome to Khuluma-Nathi, a website that assists both instituition and all
+      stakeholders involved with regards to communication and voicing your concerns.</p>
+
+    <h5> Choose whether you want to be recognized or if you would like to remain
+      anonymous below:
+    </h5>
+    <button class="button" style="vertical-align:middle" data-toggle="modal" data-target="#exampleModal"><span>
+        Anonymous </span></button>
+    <button class="button" style="vertical-align:middle" data-toggle="modal"
+      data-target="#exampleModalCenter"><span>Recognised </span></button>
+    <!-- Button trigger modal -->
 
 
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e31837">Close</button>
-          <button type="button" class="btn btn-primary"  (click)="recogniseReg(); heroForm.reset()">Send</button>
-        </div>
-
-        <div *ngIf="status" class="alert alert-primary" role="alert">
-            <p > Your {{categoryName1}} has been submited! </p>
-        </div>
-      </div>
-    </div>
   </div>
-  
-  <!--  admin logIn-->
-   
-   <div class="modal fade" id="exampleModalCenter01" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter01Title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenter01Title">Admin LogIn</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
+</div>
+
+
+<!-- Button trigger modal -->
+
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">follow the screen shoot to assist you on how our system works</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ANONYMOUS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" *ngFor="let cat of categories" (click)="AnogetCatId(cat)">{{cat.name}}</a>
+
+          </div>
+        </div>
+        <form #hero="ngForm">
+
+          <div *ngIf="test ===true" class="alert alert-warning" role="alert">
+            <p> We would like to hear your <b> {{categoryName}}!</b>
+
+            </p>
+          </div>
+          <br>
+          <div class="form-group">
+            <p *ngIf="test ===true">Please type your {{categoryName}} below</p>
+            <textarea id="message" class="form-control" rows="3" name="message"
+              placeholder="type your text here"></textarea>
+          </div>
+
+
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+          style="background-color: #e31837">Close</button>
+        <button type="button" class="btn btn-primary" (click)="anonymousReg(); hero.reset()">Send</button>
+      </div>
+      <div *ngIf="status" class="alert alert-primary" role="alert">
+        <p> Your {{categoryName1}} has been submited! </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">RECOGNIZED</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       
+        <form #heroForm="ngForm" [formGroup]="verifyForm">
+          <div class="form-group">
+
+
+
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name" name="name"
+              placeholder="Enter name e.g John" [ngClass]="{'is-invalid':
+                  verifyForm.get('name').touched && verifyForm.get('name').invalid}" required autofocus>
+            <div *ngIf=" verifyForm.get('name').touched && verifyForm.get('name').invalid" class="error">
+              <div *ngIf="verifyForm.get('name').errors.required">The field is mandatory</div>
+              <div *ngIf="verifyForm.get('name').errors.maxlength">The field should have a maximum length of twenty(20)
+              </div>
+              <div *ngIf="verifyForm.get('name').errors.minlength">The field should have a minimum length of three(3)
+              </div>
+              <div *ngIf="verifyForm.get('name').errors.pattern">The field can only accept alphabets</div>
+            </div>
+
+
+            <label for="exampleFormControlInput1">Surname</label>
+            <input type="text" id="surname" class="form-control" formControlName="surname" name="surname"
+              placeholder="Enter surname e.g Doe" [ngClass]="{'is-invalid':
+                  verifyForm.get('surname').touched && verifyForm.get('surname').invalid}" required autofocus>
+            <div *ngIf="verifyForm.get('surname').touched && verifyForm.get('surname').invalid" class="error">
+              <div *ngIf="verifyForm.get('surname').errors.required">The field is mandatory</div>
+              <div *ngIf="verifyForm.get('surname').errors.maxlength">The field should have a maximum length of
+                twenty(20)</div>
+              <div *ngIf="verifyForm.get('surname').errors.minlength">The field should have a minimum length of three(3)
+              </div>
+              <div *ngIf="verifyForm.get('surname').errors.pattern">The field can only accept alphabets</div>
+            </div>
+
+
+            <label for="exampleFormControlInput1">Phone Number</label>
+            <input type="number" id="contact" class="form-control" formControlName="contact" name="contact"
+              placeholder="Contact number eg. 0123456789" [ngClass]="{'is-invalid':
+                  verifyForm.get('contact').touched && verifyForm.get('contact').invalid}" required autofocus>
+            <div *ngIf=" verifyForm.get('contact').touched && verifyForm.get('contact').invalid" class="error">
+              <div *ngIf="verifyForm.get('contact').errors.required">The field is mandatory</div>
+              <div *ngIf="verifyForm.get('contact').errors.pattern">The field can only accept numbers</div>
+              <div *ngIf="verifyForm.get('contact').errors.maxlength">The field should have a maximum length of 10</div>
+              <div *ngIf="verifyForm.get('contact').errors.minlength">The field should have a minimum length of 10</div>
+
+            </div>
+
+
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" id="email" class="form-control" formControlName="email" name="email"
+              placeholder="name@example.com" [ngClass]="{'is-invalid':
+                  verifyForm.get('email').touched && verifyForm.get('email').invalid}" required autofocus>
+            <div *ngIf="verifyForm.get('email').touched && verifyForm.get('email').invalid" class="error">
+              <div *ngIf="verifyForm.get('email').errors.required">The field is mandatory</div>
+
+            </div>
+          </div>
+
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Category
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" *ngFor="let cat of categories" (click)="RecgetCatId(cat)">{{cat.name}}</a>
+
+            </div>
+          </div>
+
+
+          <div *ngIf="test ===true" class="alert alert-warning" role="alert">
+            <p> We would like to hear your <b> {{categoryName1}}!</b>
+            </p>
+          </div>
+          <br>
+          <div class="form-group">
+            <p *ngIf="test ===true">Please type your {{categoryName1}} below</p>
+            <textarea id="message" class="form-control" rows="3" name="message"
+              placeholder="type your text here"></textarea>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+          style="background-color: #e31837">Close</button>
+        <button type="button" class="btn btn-primary" (click)="recogniseReg(); heroForm.reset()">Send</button>
+      </div>
+
+      <div *ngIf="status" class="alert alert-primary" role="alert">
+        <p> Your {{categoryName1}} has been submited! </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  admin logIn-->
+
+<div class="modal fade" id="exampleModalCenter01" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenter01Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenter01Title">Admin LogIn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">follow the screen shoot to assist you on how our system works
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
         <!DOCTYPE html>
         <html lang="en">
+
         <head>
           <title>Bootstrap Example</title>
           <meta charset="utf-8">
@@ -198,52 +250,52 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-          
+
           <style>
-          /* Make the image fully responsive */
-          .carousel-inner img {
+            /* Make the image fully responsive */
+            .carousel-inner img {
               width: 1500%;
               height: 1500%;
-          }
+            }
           </style>
         </head>
+
         <body>
-        
-        <div id="demo" class="carousel slide" data-ride="carousel">
-        
-          <!-- Indicators -->
-          <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-           
-          </ul>
-          
-          <!-- The slideshow -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="../../assets/images/home.png" class="d-block w-100" alt="...">
-            <p>you can chose whether you want to be recognised by the system or not by clicking one of the buttons</p>
+
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../../assets/images/home.png" class="d-block w-100" alt="...">
+                <p>you can chose whether you want to be recognised by the system or not by clicking one of the buttons
+                </p>
+              </div>
+              <div class="carousel-item">
+                <img src="../../assets/images/anonymous.png" class="d-block w-100" alt="...">
+                <p> chose the category you want and write the text on the text box</p>
+              </div>
+
+              <div class="carousel-item">
+                <img src="../../assets/images/recognized.png" class="d-block w-100" alt="...">
+                <p>enter your details and chose the category you want and write the text on the text box </p>
+
+              </div>
             </div>
-            <div class="carousel-item">
-           <img src="../../assets/images/anonymous.png" class="d-block w-100" alt="...">
-           <p> chose the category you want and write the text on the text box</p>
-            </div>
-            
-            <div class="carousel-item">
-        <img src="../../assets/images/recognized.png" class="d-block w-100" alt="...">
-        <p>enter your details and chose the category you want and write the text on the text box </p>
-       
-            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
           </div>
-          
-          <!-- Left and right controls -->
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-        
- 

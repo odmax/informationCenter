@@ -1,78 +1,66 @@
 
 
-<form class="form-signin" [formGroup]="adminForm" (ngSubmit) = "AdminLogIn()">
+<form class="form-signin" [formGroup]="adminForm" (ngSubmit)="onSubmit()">
   <a>
     <img src="../../assets/images/logo.png" alt="" width="200" height="72" style="margin: 50px">
   </a>
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  
-  <!--
-  <mat-label>Email</mat-label>
-  <input matInput placeholder="Email"formControlName="email" [ngClass]="{'is-invalid':
-  contactDetailsForm.get('email').touched && contactDetailsForm.get('email').invalid}">
 
-  <mat-error *ngIf="contactDetailsForm.get('email').touched && contactDetailsForm.get('email').invalid">
-      <div *ngIf="contactDetailsForm.get('email').errors.required">Email is required</div>
-      <div *ngIf="contactDetailsForm.get('email').errors.email">Enter a valid email</div>
-  </mat-error>
-  -->
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="Text" id="email" formControlName="email" name="email"class="form-control" placeholder="User Name" [ngClass]="{'is-invalid':
-  adminForm.get('email').touched && adminForm.get('email').invalid}" required autofocus>
 
-  <div *ngIf="adminForm.get('email').invalid && adminForm.get('email').touched" class="error">
-    <div *ngIf="adminForm.get('email').errors.required">Email is required</div>
-    <!--div *ngIf="adminForm.get('email').errors.email">Enter a valid email</div>-->
+
+  <div class="form-group" >
+ <label class="control-label" for="email" >Email address</label>
+ <div class="input-group">
+   <input type="text" class="form-control mr-sm-2" id="email" formControlName="email" 
+     placeholder="Enter email address"
+  [ngClass]="{ 'is-invalid' :submitted && fm.admin?.errors }" />
+    <span *ngIf="submitted && fm.email?.errors" class="invalid-feedback">
+      <span *ngIf="fm.email?.errors.required">Email is required</span>
+    </span>
+ 
+ </div>
+</div>
+
+  <div class="form-group">
+  <label  class="control-label" for="password" >Password</label>
+  <div class="input-group">
+    <input type="password" class="form-control mr-sm-2" id="passwod" formControlName="password" 
+     placeholder=" Enter Password" [ngClass]="{'is-invalid': submitted && fm.password?.errors }" />
+    <span *ngIf="submitted && fm.password?.errors" class="invalid-feedback">
+    <span *ngIf="fm.password?.errors.required">Password is required</span>
+    </span>
+   
+  </div>
   </div>
 
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="password" formControlName="password" name="Password"class="form-control" placeholder="Password" [ngClass]="{'is-invalid':
-  adminForm.get('email').touched}"required autofocus>
-  <div *ngIf="adminForm.get('password').touched" class="error">
-    <div *ngIf="adminForm.get('password').errors.required">Password is required</div>
-  </div>
-  
-  <div class="checkbox mb-3">
+   <!-- <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
   <div *ngIf="invalidLogin" class="error">
     <div>Invalid credentials.</div>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </div> 
+-->
+
+
+   <div class="form-group col-md-4">
+
+    <button [disabled]=" loading " type="submit"
+    class ="btn btn-primary btn-lg btn-block shadow p-3 mb-5 rounded bg-info">
+  <span *ngIf=" loading " class="spinner-border spinner-border-sm mr-1"></span>
+        Login
+  </button>
+
+   </div>
+ 
+
+
+  <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <div *ngIf="submitted" class="error">
     <div *ngIf="adminForm.controls.password.errors.required">Invalid Credentials</div>
   </div>
+-->
+
   <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
 </form>
-
-
-<!--
-<div class="row">
-
-  <div class="col-md-6 col-md-offset-2">
-    <h1>Login </h1>
-    <form [formGroup]="adminForm" (ngSubmit)="AdminLogIn(adminForm)">
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" class="form-control" formControlName="email" id="email">
-        <div *ngIf="submitted && adminForm.controls.email.errors" class="error">
-          <div *ngIf="adminForm.controls.email.errors.required">Email is required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" formControlName="password" id="pwd">
-        <div *ngIf="submitted && adminForm.controls.password.errors" class="error">
-          <div *ngIf="adminForm.controls.password.errors.required">Password is required</div>
-        </div>
-      </div>
-      <button class="btn btn-default">Login</button>
-      <div *ngIf="invalidLogin" class="error">
-        <div>Invalid credentials.</div>
-      </div>
-    </form>
-  </div>
-</div>
--->

@@ -30,55 +30,48 @@ export class HomeComponent implements OnInit {
   categories:any;
 
   ngOnInit() {
-  //  this.verifyForm = this.fb.group({
-    //  name: [
-      //        null, 
-        //      [
-          //      Validators.required,
-            //    Validators.pattern('[a-zA-Z ]*'),
-              //  Validators.minLength(3),
-                //Validators.maxLength(20)
-              //]
-      //]
-//       ,
-//       surname:[
-//                 null,
-//                 [
-//                   Validators.required,
-//                   Validators.pattern('[a-zA-Z ]*'),
-//                   Validators.minLength(3),
-//                   Validators.maxLength(20)
-//                 ]
-//             ],
-//     phoneNumber:[
-//               null,
-//               [
-//                 Validators.required,
-//                 Validators.minLength(10),
-//                 Validators.maxLength(10),
-//                 Validators.pattern("^[0-9]*$")
-//               ]
-//           ],
-//  email:[
-//             null,
-//             [
-//               Validators.required,
-//               Validators.email,
-//             ]
-//         ]
+   this.verifyForm = this.fb.group({
+     name: [
+             null, 
+              [
+                Validators.required,
+                Validators.pattern('[a-zA-Z ]*'),
+               Validators.minLength(3),
+                Validators.maxLength(20)
+              ]
+      ],
+       surname:[
+                 null,
+                 [
+                  Validators.required,
+                  Validators.pattern('[a-zA-Z ]*'),
+                  Validators.minLength(3),
+                  Validators.maxLength(20)
+                ]
+            ],
+    contact:[
+              null,
+              [
+                Validators.required,
+                Validators.minLength(10),
+                Validators.maxLength(10),
+                Validators.pattern("^[0-9]*$")
+               ]
+           ],
+  email:[
+            null,
+            [
+              Validators.required,
+              Validators.email
+            ]
+        ]
 
-   // });
+    });
    
     return this.userService.getCategory().subscribe(response =>
       this.categories = response);
       
 
-  }
-
-
-
-  get fm(){
-    return this.verifyForm.controls;
   }
   AnogetCatId(e){
     this.categoryData.id= e.id;

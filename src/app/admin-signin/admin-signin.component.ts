@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ApplicationInitStatus } from '@angular/core';
 import { UserService } from 'src/app/user.service'
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import { first } from 'rxjs/operators';
 
 
 @Component({
@@ -12,18 +13,29 @@ import {Router} from '@angular/router'
 
 export class AdminSigninComponent implements OnInit {
 
-  adminForm: FormGroup;
-  submitted: boolean = false;
-  invalidLogin: boolean = false;
+adminForm: FormGroup;
+loading=false;
+submitted=false;
+errors:string;
+admin:' ';
+returnUrl:any;
+admin_pass:' ';
+invalidLogin: boolean = false;
 
-  @Input() adminData = {
-    email: " ", password: " ", admin_id: " "
-  }
-  constructor(private userService: UserService, private router: Router, private adminserv: FormBuilder) { }
+
+
+
+ email: " "; password: " "; admin_id: " ";
+  
+  constructor(
+    private userService: UserService, 
+    private router: Router, 
+    private adminserv: FormBuilder) { }
+
   private adLog:any;
   ngOnInit() {
     this.adminForm = this.adminserv.group({
-      email: [
+   email: [
               null, 
               [
                 Validators.required
@@ -37,28 +49,60 @@ export class AdminSigninComponent implements OnInit {
             ]
     });
   }
-  AdminLogIn(f) {
+
+  get fm()
+  {
+    return this.adminForm.controls;
+  }
+
+  onSubmit()
+  {
     this.submitted = true;
+
     if (this.adminForm.invalid) {
       return;
-    }
-  
-    this.userService.getAdminLogIn().subscribe(
-      invalidLogin=>{
-        if(invalidLogin == false){
-          this.invalidLogin = true;
-        }
-        else{
-           this.router.navigate(['./admin-dashboard']);
-        }
-      }
-    );
-    /*
-      if(this.adminForm.controls.email.value == 'sam@gmail.com' && this.adminForm.controls.password.value == '123') {
-          this.router.navigate(['./admin-dashboard']);
-      }else {
-        this.invalidLogin = true;
-      }
-    */
   }
+
+  this.loading=true;
+     // if (this.adminForm.invalid) 
+      //{
+     this.userService.AdminLogIn(this.email, this.password)
+     .pipe(first())
+     .subscribe(
+         data => {
+             this.router.navigate([this.returnUrl]);
+         },
+         errors => {
+             this.errors = errors;
+             this.loading = false;
+         });
+     // invalidLogin=>{
+       // if(invalidLogin == false){
+        //  this.invalidLogin = true;
+       // }
+
+    
+       // else{
+        //   this.router.navigate(['./admin-dashboard']);
+      //  }
+     // }
+   // );
+    
+
+  }
+
+  
+  
+    //this.userService.getAdminLogIn().subscribe(
+      //invalidLogin=>{
+        //if(invalidLogin == false){
+          //this.invalidLogin = true;
+        //}
+        //else{
+          // this.router.navigate(['./admin-dashboard']);
+        //}
+      //}
+    //);
+  
+ // }
 }
