@@ -21,7 +21,7 @@
         <h5 class="card-title">COMLIMENTS CARD</h5>
         
       </div>
-      <a routerLink="/rec-compliment" class="btn btn-primary">View Compliments</a>
+      <a routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" class="btn btn-primary">View Compliments</a>
     </div>
 
     <div class="card text-white bg-danger mb-3" id="cards">
@@ -30,7 +30,7 @@
         <h5 class="card-title">COMPLAINTS CARD</h5>
         
       </div>
-      <a routerLink="/rec-complaint" class="btn btn-danger">View Complaints</a>
+      <a routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)" class="btn btn-danger">View Complaints</a>
     </div>
     <div class="card text-white bg-warning mb-3" id="cards">
       <div class="card-header">Suggestions</div>
@@ -38,7 +38,7 @@
         <h5 class="card-title">SUGGESTION CARD</h5>
         
       </div>
-      <a routerLink="/rec-suggestion" class="btn btn-warning" style="font:white">View Suggestions</a>
+      <a  routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)" class="btn btn-warning" style="font:white">View Suggestions</a>
     </div>
   </div>
 
@@ -62,13 +62,18 @@
               <td *ngIf="i<5">{{cat.name}}</td> 
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td><button class="btn btn-primary" routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" >Show all</button></td>
            
           </tbody>
         </table>
-
+        
       </div>
+<hr>
+      <div class="text-center">
+  <button class="btn btn-primary" style="width:40%;" routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" >Show all</button>
     </div>
+    <br>
+  </div>
+    
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <h6 class="my-0 font-weight-normal">Recent Complaints</h6>
@@ -87,13 +92,16 @@
               <td *ngIf="i<5">{{cat.message}}</td>
             
             </tr>
-            <td>
-              <button class="btn btn-primary"  routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)">Show all</button></td>
     
           </tbody>
         </table>
 
       </div>
+      <hr>
+      <div class="text-center">
+      <button class="btn btn-primary "  style="width: 40%;" routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)">Show all</button>
+    </div>
+    <br>
     </div>
 
     <div class="card mb-4 shadow-sm">
@@ -115,13 +123,16 @@
               <td *ngIf="i<5">{{cat.name}}</td>
               <td *ngIf="i<5">{{cat.message}}</td>
             </tr>
-            <td>
-              <button class="btn btn-primary"  routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)">Show all</button>
-            </td>
+          
           </tbody>
         </table>
 
       </div>
+      <hr>
+      <div class="text-center">
+      <button class="btn btn-primary" style="width: 40%;" routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)">Show all</button>
+  </div>
+  <br>
   </div>
 </div>
 </main>

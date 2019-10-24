@@ -3,4 +3,9 @@
 #cards {
   margin: 20px;
   width: 20%;
+
+}
+.but{
+  display:flex;
+  justify-content: center;
 }

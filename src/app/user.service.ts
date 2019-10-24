@@ -57,9 +57,10 @@ export class UserService {
     return this.http.post<any>(this.recognisePost, user, {});
   }
 
-  public getAdminLogIn()
+  public AdminLogIn(email, password)
   {
-    return this.http.get<any>(this.AdminLogInUrl);
+    //email, password
+    return this.http.post<any>(this.AdminLogInUrl,  {email, password});
   }
 
   public getRecognized()
