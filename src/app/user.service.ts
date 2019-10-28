@@ -32,10 +32,9 @@ export class UserService {
   anonymousPost ='http://localhost:8080/anonymous';
   recognisePost = 'http://localhost:8080/recognized';
   getAllFeedBAck= 'http://localhost:8080/feedback/GetAll';
-  getFeedBackComplain = 'http://localhost:8080/feedback/complain/2';
-  getFeedBackSuggestion = 'http://localhost:8080/feedback/suggestion/3';
   postFeedBack = 'http://localhost:8080/feedback';
-  postFeedbackComplain = "";
+  
+ 
 
   
   
@@ -59,7 +58,7 @@ export class UserService {
 
   public AdminLogIn(email, password)
   {
-    //email, password
+    
     return this.http.post<any>(this.AdminLogInUrl,  {email, password});
   }
 
@@ -102,7 +101,13 @@ public getAnonymSuggestion()
 }
 public PostFeedback(user)
   {
+    // console.log("Annomas ",user)
     return this.http.post<any>(this.postFeedBack,user, {});
+  }
+
+  public GetFeedBack()
+  {
+    return this.http.get<any>(this.getAllFeedBAck);
   }
 
 

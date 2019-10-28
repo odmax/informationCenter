@@ -15,6 +15,7 @@ import { AnonComplimentComponent } from './anon-compliment/anon-compliment.compo
 import { AnonSuggestionComponent } from './anon-suggestion/anon-suggestion.component';
 import { AnonComplaintComponent } from './anon-complaint/anon-complaint.component';
 import { AnonymousDashbordComponent } from './anonymous-dashbord/anonymous-dashbord.component';
+import { SeeAllComponent } from './see-all/see-all.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
     path: '', component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
+      {path : 'see-all', component:SeeAllComponent}
       //{path: 'testing', component: TestingComponent}
     ]
   },

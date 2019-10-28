@@ -2,14 +2,14 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Anonymous</h1>
-    
-    
+
+
     <div class="search-container">
       <input type="text" placeholder="Search.." name="search" ng-model="globalSearch.$">
       <button type="submit"><i class="fa fa-search"></i></button>
-      </div>
+    </div>
 
-      <!-- <div>
+    <!-- <div>
         <input type="text" [(ngModel)]="term">
         <div *ngFor = "let ann of Anonymous |filter:term" >
           <p>
@@ -17,53 +17,56 @@
           </p>
         </div>
       </div> -->
-    
 
-  
+
+
   </div>
   <table class="table">
     <thead>
       <tr>
-        
+
         <th scope="col">MESSAGE</th>
         <th scope="col">CATEGORY</th>
-       <th scope="col" >RESPONSE</th>
-        
+        <th scope="col">RESPONSE</th>
+
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let cat of Anonymous">
-        
+
         <td>{{cat.message}}</td>
         <td>
-            <div *ngFor = "let rat of categories">
-              <div *ngIf = "cat.id === rat.id">{{rat.name}}</div>
-            </div>
-        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Reply</button>
-    
+          <div *ngFor="let rat of categories">
+            <div *ngIf="cat.id === rat.id">{{rat.name}}</div>
+          </div>
+        <td><button class="btn btn-primary" data-toggle="modal" (click)="getCat(cat)" data-target="#exampleModal">Reply</button>
+
       </tr>
-      
+
     </tbody>
   </table>
 
   <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" >
-        <h5 class="modal-title" id="exampleModalLabel">RESPOND TO</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         <textarea [(ngModel)]="feedBackData.anony_reply" style="width: 100%;" name="anony_reply"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="feedBack()" data-dismiss="modal">Reply</button>
-   
+  <div *ngFor="let cat of Anonymous" class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">RESPOND TO</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" [(ngModel)] = "feedBackData.id">
+          <input type="text" [(ngModel)] = "feedBackData.message">
+          <textarea id="anony_reply" style="width: 100%;" [(ngModel)] = "feedBackData.anony_reply" name="anony_reply"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="feedBack()" data-dismiss="modal">Reply</button>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
 </main>
