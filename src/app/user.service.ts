@@ -19,20 +19,21 @@ export class UserService {
   // anonymousPost ='http://192.168.137.1:8080/anonymous';
   // recognisePost = 'http://192.168.137.1:8080/recognized';
 
-  anonymousUrl ='http://localhost:8080/anonymous/GetAll';
-  categoryUrl = 'http://localhost:8080/';
-  recognizedUrl ='http://localhost:8080/recognized/GetAll';
-  complaintsUrl ='http://localhost:8080/recognized/complain/2';
-  complimentsUrl='http://localhost:8080/recognized/compliment/1';
-  suggestionUrl='http://localhost:8080/recognized/suggestion/3';
-  anonyComplainUrl ='http://localhost:8080/anonymous/complain/2';
-  anonyComplimentUrl='http://localhost:8080/anonymous/compliment/1';
-  anonySuggestionUrl ='http://localhost:8080/anonymous/suggestion/3';
-  AdminLogInUrl = 'http://localhost:8080/admin';
-  anonymousPost ='http://localhost:8080/anonymous';
-  recognisePost = 'http://localhost:8080/recognized';
-  getAllFeedBAck= 'http://localhost:8080/feedback/GetAll';
-  postFeedBack = 'http://localhost:8080/feedback';
+  anonymousUrl ='http://168.172.188.119:8080/anonymous/GetAll';
+  categoryUrl = 'http://168.172.188.119:8080/';
+  recognizedUrl ='http://168.172.188.119:8080/recognized/GetAll';
+  complaintsUrl ='http://168.172.188.119:8080/recognized/complain/2';
+  complimentsUrl='http://168.172.188.119:8080/recognized/compliment/1';
+  suggestionUrl='http://168.172.188.119:8080/recognized/suggestion/3';
+  anonyComplainUrl ='http://168.172.188.119:8080/anonymous/complain/2';
+  anonyComplimentUrl='http://168.172.188.119:8080/anonymous/compliment/1';
+  anonySuggestionUrl ='http://168.172.188.119:8080/anonymous/suggestion/3';
+  AdminLogInUrl = 'http://168.172.188.119:8080/admin';
+ LogInUrl = 'http://168.172.188.119:8080/login';
+  anonymousPost ='http://168.172.188.119:8080/anonymous';
+  recognisePost = 'http://168.172.188.119:8080/recognized';
+  getAllFeedBAck= 'http://168.172.188.119:8080/feedback/GetAll';
+  postFeedBack = 'http://168.172.188.119:8080/feedback';
   
  
 
@@ -59,7 +60,7 @@ export class UserService {
   public AdminLogIn(email, password)
   {
     
-    return this.http.post<any>(this.AdminLogInUrl,  {email, password});
+    return this.http.post<any>(this. LogInUrl,  {email, password});
   }
 
   public getRecognized()
