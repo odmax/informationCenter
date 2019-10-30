@@ -99,17 +99,24 @@ export class HomeComponent implements OnInit {
     this.userService.PostAnonymous(this.anonymousData).subscribe(
       data =>
       console.log(data));
-
-      
+      console.log(this.anonymousData.message);
   }
+
 
   recogniseReg()
   {
     this.userService.PostRecognized(this.recogniseData).subscribe(data =>
     console.log(data));
+    console.log(this.recogniseData.name);
+    console.log(this.recogniseData.surname);
+    console.log(this.recogniseData.contact);
+    console.log(this.recogniseData.email);
+    console.log(this.recogniseData.cat_id);
+    console.log(this.recogniseData.message);
   }
 
-
-
+ 
 }
+
+
 

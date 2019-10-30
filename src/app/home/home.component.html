@@ -78,7 +78,7 @@
           <br>
           <div class="form-group">
             <p *ngIf="test ===true">Please type your {{categoryName}} below</p>
-            <textarea id="message" class="form-control" rows="3" name="message"
+            <textarea id="message" class="form-control" rows="3" [(ngModel)] = "anonymousData.message" name="message"
               placeholder="type your text here"></textarea>
           </div>
 
