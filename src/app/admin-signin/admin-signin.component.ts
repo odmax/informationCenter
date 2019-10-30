@@ -55,6 +55,7 @@ invalidLogin: boolean = false;
     return this.adminForm.controls;
   }
 
+
   onSubmit()
   {
     this.submitted = true;
@@ -64,13 +65,11 @@ invalidLogin: boolean = false;
   }
 
   this.loading=true;
-     // if (this.adminForm.invalid) 
-      //{
      this.userService.AdminLogIn(this.email, this.password)
      .pipe(first())
      .subscribe(
          data => {
-             this.router.navigate([this.returnUrl]);
+             this.router.navigate(['./admin-dashboard']);
          },
          errors => {
              this.errors = errors;

@@ -21,7 +21,7 @@
         <h5 class="card-title">COMLIMENTS CARD</h5>
         
       </div>
-      <a routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" class="btn btn-primary">View Compliments</a>
+      <a routerLink="/rec-compliment" (click)="  takeRekCompliment(cat)" class="btn btn-primary">View Compliments</a>
     </div>
 
     <div class="card text-white bg-danger mb-3" id="cards">
@@ -30,7 +30,7 @@
         <h5 class="card-title">COMPLAINTS CARD</h5>
         
       </div>
-      <a routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)" class="btn btn-danger">View Complaints</a>
+      <a routerLink="/rec-complaint" (click)="takeRekcomplaints(cat)" class="btn btn-danger">View Complaints</a>
     </div>
     <div class="card text-white bg-warning mb-3" id="cards">
       <div class="card-header">Suggestions</div>
@@ -38,7 +38,7 @@
         <h5 class="card-title">SUGGESTION CARD</h5>
         
       </div>
-      <a  routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)" class="btn btn-warning" style="font:white">View Suggestions</a>
+      <a  routerLink="/rec-suggestion" (click)="takeRekSuggestion(cat)" class="btn btn-warning" style="font:white">View Suggestions</a>
     </div>
   </div>
 
@@ -69,7 +69,7 @@
       </div>
 <hr>
       <div class="text-center">
-  <button class="btn btn-primary" style="width:40%;" routerLink="/rec-compliment" (click)=" takeAllCompliment(cat)" >Show all</button>
+  <button class="btn btn-primary" style="width:40%;" routerLink="/rec-compliment" (click)=" takeRekCompliment(cat)" >Show all</button>
     </div>
     <br>
   </div>
@@ -99,7 +99,7 @@
       </div>
       <hr>
       <div class="text-center">
-      <button class="btn btn-primary "  style="width: 40%;" routerLink="/rec-complaint" (click)="takeAllcomplaints(cat)">Show all</button>
+      <button class="btn btn-primary "  style="width: 40%;" routerLink="/rec-complaint" (click)="takeRekcomplaints(cat)">Show all</button>
     </div>
     <br>
     </div>
@@ -130,7 +130,7 @@
       </div>
       <hr>
       <div class="text-center">
-      <button class="btn btn-primary" style="width: 40%;" routerLink="/rec-suggestion" (click)="takeAllSuggestion(cat)">Show all</button>
+      <button class="btn btn-primary" style="width: 40%;" routerLink="/rec-suggestion" (click)="takeRekSuggestion(cat)">Show all</button>
   </div>
   <br>
   </div>
