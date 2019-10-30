@@ -111,13 +111,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #heroForm="ngForm" [formGroup]="verifyForm">
+        <form  [formGroup]="verifyForm">
           <div class="form-group">
 
-
+<!-- #heroForm="ngForm" -->
 
             <label for="exampleFormControlInput1">Name</label>
-            <input type="text" id="name" class="form-control" formControlName="name" name="name"
+            <input type="text" id="name" class="form-control" formControlName="name"  [(ngModel)]="recogniseData.name"
               placeholder="Enter name e.g John" [ngClass]="{'is-invalid':
                   verifyForm.get('name').touched && verifyForm.get('name').invalid}" required autofocus>
             <div *ngIf=" verifyForm.get('name').touched && verifyForm.get('name').invalid" class="error">
@@ -131,7 +131,7 @@
 
 
             <label for="exampleFormControlInput1">Surname</label>
-            <input type="text" id="surname" class="form-control" formControlName="surname" name="surname"
+            <input type="text" id="surname" class="form-control" formControlName="surname" [(ngModel)] ="recogniseData.surname"
               placeholder="Enter surname e.g Doe" [ngClass]="{'is-invalid':
                   verifyForm.get('surname').touched && verifyForm.get('surname').invalid}" required autofocus>
             <div *ngIf="verifyForm.get('surname').touched && verifyForm.get('surname').invalid" class="error">
@@ -145,7 +145,7 @@
 
 
             <label for="exampleFormControlInput1">Phone Number</label>
-            <input type="number" id="contact" class="form-control" formControlName="contact" name="contact"
+            <input type="number" id="contact" class="form-control" formControlName="contact" [(ngModel)]="recogniseData.contact"
               placeholder="Contact number eg. 0123456789" [ngClass]="{'is-invalid':
                   verifyForm.get('contact').touched && verifyForm.get('contact').invalid}" required autofocus>
             <div *ngIf=" verifyForm.get('contact').touched && verifyForm.get('contact').invalid" class="error">
@@ -158,7 +158,7 @@
 
 
             <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" id="email" class="form-control" formControlName="email" name="email"
+            <input type="email" id="email" class="form-control" formControlName="email" [(ngModel)]="recogniseData.email"
               placeholder="name@example.com" [ngClass]="{'is-invalid':
                   verifyForm.get('email').touched && verifyForm.get('email').invalid}" required autofocus>
             <div *ngIf="verifyForm.get('email').touched && verifyForm.get('email').invalid" class="error">
@@ -187,7 +187,7 @@
           <br>
           <div class="form-group">
             <p *ngIf="test ===true">Please type your {{categoryName1}} below</p>
-            <textarea id="message" class="form-control" rows="3" name="message"
+            <textarea id="message" class="form-control" rows="3" formControlName="message" [(ngModel)]="recogniseData.message"
               placeholder="type your text here"></textarea>
           </div>
 
