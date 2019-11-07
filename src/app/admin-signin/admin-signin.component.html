@@ -1,47 +1,60 @@
 
-<form class="form-signin" [formGroup]="adminForm" (ngSubmit)="onSubmit()">
-  <a>
+<form class="form-signin">
+  <a routerLink="/">
     <img src="../../assets/images/logo.png" alt="" width="200" height="72" style="margin: 50px">
   </a>
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
-  <div class="form-group" >
- <label class="control-label" for="email" >Email address</label>
- <div class="input-group">
-   <input type="text" class="form-control mr-sm-2" id="email" formControlName="email" 
-     placeholder="Enter email address"
-  [ngClass]="{ 'is-invalid' :submitted && fm.email?.errors }" />
-    <span *ngIf="submitted && fm.email?.errors" class="invalid-feedback">
-      <span *ngIf="fm.email?.errors.required">Email is required</span>
+  <!-- <div>
+ <label class="control-label" for="username" >UserName</label>
+    <input [(ngModel)]="logINUserData.username" name ="username" type="text"  id="username"  
+     placeholder="Enter UserName"/>
+    <span *ngIf="submitted && fm.username?.errors" class="invalid-feedback">
+      <span *ngIf="fm.username?.errors.required">username is required</span>
     </span>
  
- </div>
 </div>
 
-  <div class="form-group">
+  <div>
   <label  class="control-label" for="password" >Password</label>
-  <div class="input-group">
-    <input type="password" class="form-control mr-sm-2" id="passwod" formControlName="password" 
-     placeholder=" Enter Password" [ngClass]="{'is-invalid': submitted && fm.password?.errors }" />
+    <input [(ngModel)]="logINUserData.passwod" name ="password" type="password" id="password"  
+     placeholder=" Enter Password" />
     <span *ngIf="submitted && fm.password?.errors" class="invalid-feedback">
     <span *ngIf="fm.password?.errors.required">Password is required</span>
     </span>
    
   </div>
-  </div>
 
-   <!-- <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <div *ngIf="invalidLogin" class="error">
-    <div>Invalid credentials.</div>
-  </div> 
--->
+  <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+
 <div class =form-group>
-      <button [disabled]="loading" type="submit" routerLink="/admin-dashboard"  class="btn btn-primary btn-lg" style="margin-right: 20px;">Login
+      <button (click)="loginUser()" type="submit" class="btn btn-primary btn-lg" style="margin-right: 20px;">Login
       </button>
       <button type="button" routerLink="/"  class="btn btn-secondary btn-lg">Cancel</button>
     </div>
+</form> -->
+
+
+<form action="/action_page.php" method="post">
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input [(ngModel)]="logINUserData.username" type="text" id="username" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input [(ngModel)]="logINUserData.passwod" type="password" id="password" placeholder="Enter Password" name="password" required>
+        
+    <button (click)="loginUser()" type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" routerLink="/" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
 </form>
+

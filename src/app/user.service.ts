@@ -57,10 +57,10 @@ export class UserService {
     return this.http.post<any>(this.recognisePost, user, {});
   }
 
-  public AdminLogIn(email, password)
+  public AdminLogIn(user)
   {
     
-    return this.http.post<any>(this. LogInUrl,  {email, password});
+    return this.http.post<any>(this.LogInUrl, user);
   }
 
   public getRecognized()
@@ -111,6 +111,10 @@ public PostFeedback(user)
     return this.http.get<any>(this.getAllFeedBAck);
   }
 
+  // public sendMail(user)
+  // {
+  //   return this.http.post<any>(this.emailUrl, user);
+  // }
 
 }
 
