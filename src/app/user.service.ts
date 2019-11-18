@@ -59,7 +59,7 @@ export class UserService {
 
   public AdminLogIn(user)
   {
-    
+    console.log(user)
     return this.http.post<any>(this.LogInUrl, user);
   }
 

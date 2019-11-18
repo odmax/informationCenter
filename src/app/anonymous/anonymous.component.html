@@ -4,20 +4,9 @@
     <h1 class="h2">Anonymous</h1>
 
 
-    <div class="search-container">
-      <input type="text" placeholder="Search.." name="search" ng-model="globalSearch.$">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </div>
-
-    <!-- <div>
-        <input type="text" [(ngModel)]="term">
-        <div *ngFor = "let ann of Anonymous |filter:term" >
-          <p>
-            {{ann.name}}
-          </p>
-        </div>
-      </div> -->
-
+    <!-- <input type="text" id="myInput" onkeyup="keypress()" placeholder="Search..."> -->
+    <!-- <input type="text" (keyup)='search($event.target.value)'> -->
+    <input type="text" [(ngModel)]="search" (ngModelChange)="filter($event)">
 
 
   </div>

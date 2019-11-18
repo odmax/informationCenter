@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Pipe, PipeTransform } from '@angular/core';
-import { pipe } from 'rxjs';
+import { Subject } from 'rxjs';
+
+// declare const myFunction:any;
 
 @Component({
   selector: 'app-anonymous',
@@ -28,10 +28,13 @@ export class AnonymousComponent implements OnInit {
   categoryName: any;
   test = false;
   categories: any;
- 
+  // filterData: any={};
+  data: any;
+  data$ = new Subject<any>();
+  search:any;
 
 
-
+  
 
   constructor(private userService: UserService) { }
   Anonymous: any;
@@ -82,4 +85,25 @@ export class AnonymousComponent implements OnInit {
     this.test=true;
     console.log(e);
   }
+
+  // keypress(){
+  //   myFunction();
+  // }
+
+  // search(term: string) {
+  //   if(!term) {
+  //     this.filterData = this.data;
+  //   } else {
+  //     this.filterData = this.data.filter(x => 
+  //        x.name.trim().toLowerCase().includes(term.trim().toLowerCase())
+  //     );
+  //   }
+  // }
+
+  
+  filter(search) {
+    this.data$.next(this.data.filter(_ => _.message.includes(search)));
+  }
+
+  
 }

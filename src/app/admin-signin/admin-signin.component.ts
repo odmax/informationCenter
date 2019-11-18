@@ -13,7 +13,10 @@ import { first } from 'rxjs/operators';
 
 export class AdminSigninComponent implements OnInit {
 
-logINUserData={}
+@Input() logINUserData={
+  username: "",
+  password: ""
+}
   
   constructor(private userService:UserService) { }
 
