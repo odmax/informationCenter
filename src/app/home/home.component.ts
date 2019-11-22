@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     id: " ", name: " "
   }
   @Input() recogniseData = {
-    cat_id: " ", name: " ", surname: " ", contact: " ", email: " ", message: " "
+    cat_id: "", name: "", surname: "", contact: "", email: "", message: ""
   }
 
   test = false;
@@ -111,13 +111,23 @@ export class HomeComponent implements OnInit {
 
 
   recogniseReg() {
-    this.userService.PostRecognized(this.recogniseData).subscribe(data =>
-    console.log(data));  
-    console.log(this.recogniseData)
+    this.userService.PostRecognized(this.recogniseData).subscribe()
+      
+    this.sendEmail();
   }
 
+  sendEmail() {
+    this.userService.postemail(this.recogniseData).subscribe(
+      data => {
+        
+        console.log('Thank you for reaching out to us');
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+  }
 
 }
-
-
 

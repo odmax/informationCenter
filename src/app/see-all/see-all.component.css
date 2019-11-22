@@ -10,6 +10,7 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  float: center;
 }
 
 .darker {
@@ -21,5 +22,9 @@ body {
   content: "";
   clear: both;
   display: table;
+  float: center;
+}
+.toy{
+  float: center;
 }
 

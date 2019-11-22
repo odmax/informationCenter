@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, ApplicationInitStatus } from '@angular/core';
-import { UserService } from 'src/app/user.service'
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from '@angular/router';
-import { first } from 'rxjs/operators';
+import { UserService } from 'src/app/user.service';
+import { ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -13,23 +11,39 @@ import { first } from 'rxjs/operators';
 
 export class AdminSigninComponent implements OnInit {
 
-@Input() logINUserData={
+@Input()logINUserData={
   username: "",
-  password: ""
-}
-  
-  constructor(private userService:UserService) { }
+  password: "",
 
+}
+userId:any;
+error:boolean=false;
+errorMesage:string="";
+dataLoading:boolean=false;
+private querySubscription;
+logInUser:any;
+user:any;
+  
+  constructor(private userService:UserService,
+              private _activatedRoute: ActivatedRoute,
+              private _router: Router) { }
+
+
+      onNaveButtonClick():void{
+        this._router.navigate(['/admin-dashboard'])
+      }
   
   ngOnInit() {
 
   }
 loginUser()
 {
+  
   this.userService.AdminLogIn(this.logINUserData).subscribe(
-    Response=>console.log(Response),
-    err=>console.error(err)
-  )
+    Response=>{console.log(Response)},
+    err=>{console.error(err);})
+
+    // this._router.navigate(['/admin-dashboard'])
 }
 
 }
