@@ -13,18 +13,17 @@ import { first } from 'rxjs/operators';
 
 export class AdminSigninComponent implements OnInit {
 
-@Input()logINUserData={
-  username: "",
-  password: "",
+// @Input()logINUserData={
+//  this.loginForm.value.username,
+//   password: "",
 
-}
-userId:any;
-error:boolean=false;
-errorMesage:string="";
-dataLoading:boolean=false;
-private querySubscription;
-logInUser:any;
-user:any;
+// }
+
+
+loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
 
 
   
@@ -37,7 +36,10 @@ user:any;
         
             }
   ngOnInit() {
-
+this.loginForm = this.formBuilder.group({
+  username:['',[Validators.required]],
+  password:[' ']
+})
     
   }
 
@@ -45,30 +47,27 @@ user:any;
 
 loginUser()
 {
+  this.submitted = true;
+
+  if (this.loginForm.invalid) {
+    return;
+}
   
-  this.userService.AdminLogIn(this.logINUserData).subscribe(
-    Response=>{console.log(Response)},
+  this.userService.AdminLogIn(this.loginForm.value.username, this.loginForm.value.password).subscribe(
+    Response=>{
+    if(Response.code == 200)
+    {
+      this._router.navigate(['/admin-dashboard']);
+    }else{
+      this._router.navigate(['/admin-signin']);
+      this.loading = false;
+    }
+
+    console.log(Response.code)},
     err=>{console.error(err);})
 
-    this.validateForm()
 
     
 }
-
-validateForm() {
-  var x = document.forms["myForm"]["username"].value;
-   var y = document.forms["myForm"]["password"].value;
-  if (x == "admin" && y == "Admin") {
-    alert("success");
-    this._router.navigate(['/admin-dashboard']);
-    return false;
-  }
-  else{
-    alert("wrong details");
-
-    this._router.navigate(['/admin-signin']);
-  }
-}
-
 
 }
