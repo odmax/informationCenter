@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ApplicationInitStatus } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { ActivatedRoute, Router} from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
 
 @Component({
@@ -23,19 +25,24 @@ dataLoading:boolean=false;
 private querySubscription;
 logInUser:any;
 user:any;
+
+
   
   constructor(private userService:UserService,
+              private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
               private _activatedRoute: ActivatedRoute,
-              private _router: Router) { }
+              private _router: Router) { 
 
-
-      onNaveButtonClick():void{
-        this._router.navigate(['/admin-dashboard'])
-      }
-  
+        
+            }
   ngOnInit() {
 
+    
   }
+
+  
+
 loginUser()
 {
   
@@ -43,7 +50,25 @@ loginUser()
     Response=>{console.log(Response)},
     err=>{console.error(err);})
 
-    // this._router.navigate(['/admin-dashboard'])
+    this.validateForm()
+
+    
 }
+
+validateForm() {
+  var x = document.forms["myForm"]["username"].value;
+   var y = document.forms["myForm"]["password"].value;
+  if (x == "admin" && y == "Admin") {
+    alert("success");
+    this._router.navigate(['/admin-dashboard']);
+    return false;
+  }
+  else{
+    alert("wrong details");
+
+    this._router.navigate(['/admin-signin']);
+  }
+}
+
 
 }

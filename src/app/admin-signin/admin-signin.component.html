@@ -1,52 +1,24 @@
 
-<form class="form-signin">
+
   <a routerLink="/">
     <img src="../../assets/images/logo.png" alt="" width="200" height="72" style="margin: 50px">
   </a>
-  <h1 class="h3 mb-3 font-weight-normal">Please sign-in</h1>
-
-  <!-- <div>
- <label class="control-label" for="username" >UserName</label>
-    <input [(ngModel)]="logINUserData.username" name ="username" type="text"  id="username"  
-     placeholder="Enter UserName"/>
-    <span *ngIf="submitted && fm.username?.errors" class="invalid-feedback">
-      <span *ngIf="fm.username?.errors.required">username is required</span>
-    </span>
- 
-</div>
-
-  <div>
-  <label  class="control-label" for="password" >Password</label>
-    <input [(ngModel)]="logINUserData.passwod" name ="password" type="password" id="password"  
-     placeholder=" Enter Password" />
-    <span *ngIf="submitted && fm.password?.errors" class="invalid-feedback">
-    <span *ngIf="fm.password?.errors.required">Password is required</span>
-    </span>
-   
-  </div>
-
-  <label>
-    <input type="checkbox" checked="checked" name="remember"> Remember me
-  </label>
-
-<div class =form-group>
-      <button (click)="loginUser()" type="submit" class="btn btn-primary btn-lg" style="margin-right: 20px;">Login
-      </button>
-      <button type="button" routerLink="/"  class="btn btn-secondary btn-lg">Cancel</button>
-    </div>
-</form> -->
 
 
-<form >
+
+<form name="myForm"  (ngSubmit)="validateForm()" method="post">
 
   <div class="container">
+   
+   
     <label for="uname"><b>Username</b></label>
-    <input type="text" [(ngModel)]="logINUserData.username"  id="username" placeholder="Enter Username" name="uname" required>
+    <input type="text" [(ngModel)]="logINUserData.username"  id="username" placeholder="Enter Username" name="uname" >
+
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" [(ngModel)]="logINUserData.password"  id="password" placeholder="Enter Password" name="password" required>
-        
-    <button (click)="loginUser()" type="submit">Login</button>
+    <input type="password" [(ngModel)]="logINUserData.password"  id="password" placeholder="Enter Password" name="password" >
+
+    <button [disabled]="loading"  type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
