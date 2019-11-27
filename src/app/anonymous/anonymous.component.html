@@ -4,10 +4,14 @@
     <h1 class="h2">Anonymous</h1>
 
 
-    <!-- <input type="text" id="myInput" onkeyup="keypress()" placeholder="Search..."> -->
-    <!-- <input type="text" (keyup)='search($event.target.value)'> -->
-    <input type="text" [(ngModel)]="search" (ngModelChange)="filter($event)">
-
+    <!-- <div class="search-container">
+      <input type="text" placeholder="Search.." name="search">
+       <button type="submit"><i class="fa fa-search"></i></button>
+      </div> -->
+      <div class="search-container">
+    <input type="text" placeholder="Search.." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </div>
 
   </div>
   <table class="table">

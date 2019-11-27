@@ -1,8 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Subject } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { NavigationEnd } from '@angular/router';
 
-// declare const myFunction:any;
+
+// this.router.events.pipe(
+//   filter((event:Event) => event instanceof NavigationEnd)
+// ).subscribe(x => console.log(x))
 
 @Component({
   selector: 'app-anonymous',
@@ -31,8 +36,7 @@ export class AnonymousComponent implements OnInit {
   // filterData: any={};
   data: any;
   data$ = new Subject<any>();
-  search:any;
-
+ message:string;
 
   
 
@@ -40,6 +44,7 @@ export class AnonymousComponent implements OnInit {
   Anonymous: any;
 
   ngOnInit() {
+    
 
     this.getCategory();
     this.getAnom();
@@ -86,24 +91,17 @@ export class AnonymousComponent implements OnInit {
     console.log(e);
   }
 
-  // keypress(){
-  //   myFunction();
-  // }
-
-  // search(term: string) {
-  //   if(!term) {
-  //     this.filterData = this.data;
-  //   } else {
-  //     this.filterData = this.data.filter(x => 
-  //        x.name.trim().toLowerCase().includes(term.trim().toLowerCase())
-  //     );
-  //   }
-  // }
-
   
-  filter(search) {
-    this.data$.next(this.data.filter(_ => _.message.includes(search)));
+
+  search()
+  {
+    if(this.message != ""){
+      
+    }else if(this.message == ""){
+      this.ngOnInit();
+    }
+    this.anonymousData.message= this.data.filter(res=>{
+      return res.message.toLowerCase().match(this.message.toLowerCase())
+    });
   }
-
-  
 }
