@@ -11,22 +11,22 @@ import { map } from 'rxjs/operators';
 export class UserService {
   [x: string]: any;
 
-  anonymousUrl = 'http://168.172.188.119:8080/anonymous/GetAll';
-  categoryUrl = 'http://168.172.188.119:8080/';
-  recognizedUrl = 'http://168.172.188.119:8080/recognized/GetAll';
-  complaintsUrl = 'http://168.172.188.119:8080/recognized/complain/2';
-  complimentsUrl = 'http://168.172.188.119:8080/recognized/compliment/1';
-  suggestionUrl = 'http://168.172.188.119:8080/recognized/suggestion/3';
-  anonyComplainUrl = 'http://168.172.188.119:8080/anonymous/complain/2';
-  anonyComplimentUrl = 'http://168.172.188.119:8080/anonymous/compliment/1';
-  anonySuggestionUrl = 'http://168.172.188.119:8080/anonymous/suggestion/3';
-  AdminLogInUrl = 'http://168.172.188.119:8080/admin';
-  LogInUrl = 'http://168.172.188.119:8080/login';
-  anonymousPost = 'http://168.172.188.119:8080/anonymous';
-  recognisePost = 'http://168.172.188.119:8080/recognized';
-  getAllFeedBAck = 'http://168.172.188.119:8080/feedback/GetAll';
-  postFeedBack = 'http://168.172.188.119:8080/feedback';
-  emailUrl= 'http://168.172.188.119:8080/recognized/sendMail';
+  anonymousUrl = 'https://icenter.herokuapp.com/anonymous/GetAll';
+  categoryUrl = 'https://icenter.herokuapp.com/';
+  recognizedUrl = 'https://icenter.herokuapp.com/recognized/GetAll';
+  complaintsUrl = 'https://icenter.herokuapp.com/recognized/complain/2';
+  complimentsUrl = 'https://icenter.herokuapp.com/recognized/compliment/1';
+  suggestionUrl = 'https://icenter.herokuapp.com/recognized/suggestion/3';
+  anonyComplainUrl = 'https://icenter.herokuapp.com/anonymous/complain/2';
+  anonyComplimentUrl = 'https://icenter.herokuapp.com/anonymous/compliment/1';
+  anonySuggestionUrl = 'https://icenter.herokuapp.com/anonymous/suggestion/3';
+  AdminLogInUrl = 'https://icenter.herokuapp.com/admin';
+  LogInUrl = 'https://icenter.herokuapp.com/login';
+  anonymousPost = 'https://icenter.herokuapp.com/anonymous';
+  recognisePost = 'https://icenter.herokuapp.com/recognized';
+  getAllFeedBAck = 'https://icenter.herokuapp.com/feedback/GetAll';
+  postFeedBack = 'https://icenter.herokuapp.com/feedback';
+  emailUrl= 'https://icenter.herokuapp.com/recognized/sendMail';
   isLoggedIn = false;
 
 
